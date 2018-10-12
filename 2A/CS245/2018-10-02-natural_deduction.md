@@ -26,8 +26,7 @@ If we have the proof $\Tau \vdash \alpha$, then we can consider it as a derived 
 Some __commonly known derived rules__:
   - Principle of _modus tollens_: $\{(p \rightarrow q, (\neg q))\} \vdash (\neg p)$
   - Proof by contradiction: $\Sigma, (\neg \alpha) \vdash \perp \ \ \Rightarrow \ \Sigma \vdash \alpha$
-   - kinda useless lol
-  - Law of Excluded Middle: $\emptyset \vdash (\alpha \vee (\neg \alpha))$
+   - Law of Excluded Middle: $\emptyset \vdash (\alpha \vee (\neg \alpha))$
   - Double-Negation Introduction: $\Sigma \vdash \alpha \ \Rightarrow  \ \Sigma \vdash (\neg (\neg \alpha))$
 
 ### Alex's Amazing Collection of ND Rules

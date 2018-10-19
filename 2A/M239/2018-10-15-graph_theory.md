@@ -42,5 +42,5 @@ The graphs $(V, E)$ and $(W, F)$ are __isomorphic__ if there is a bijection $\Ph
   - $Q_2$:  square lol
   - $Q_3$:  just imagine a cube lmao
   - In $Q_n$, every vertex has $deg(n)$
-    - This is a result of being able to find a new adjacent vertex by switching exactly one value of the binary string by  
+    - This is a result of being able to find a new adjacent vertex by switching exactly one value of the binary string from $0$ to $1$ or vice versa 
 

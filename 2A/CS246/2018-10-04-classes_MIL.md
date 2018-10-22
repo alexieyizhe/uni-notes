@@ -45,7 +45,7 @@ Student billy{70, 80, 90};
 ```
 This replicates the functionality of the built-in initialization, but allows us to do everything a method allows us to do, like _default params, overloading, sanity checks, etc_.
 
-Every class already comes with a default (0-arg) constructor (_ex._ `Vec v;`), but it goes away if you define your own constructor.
+Every class already comes with a default (0-arg) constructor (_ex._ `Vec v;`), but it stops working if you define your own constructor.
 
 Every class has the following __defaults__:
   - __default constructor__: lost if you write any constructor yourself
@@ -83,5 +83,6 @@ Student::Student(int id, int assns, int mt, int final):
   - Even if the MIL orders them differently, fields always initialize in declarative order
   - MIL is _more efficient_ sometimes
   - MIL takes precedence over inline initialization/definitions
+  - Variables _inside_ braces follow normal rules for scope, variables _outside_ are fields
 
 > Lushman says: Embrace the MIL! (use it anywhere you possibly can)

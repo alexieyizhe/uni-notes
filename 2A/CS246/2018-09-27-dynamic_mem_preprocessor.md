@@ -97,12 +97,12 @@ istream &operator>>(istream &in, Grade &g){
 }
 ```
 
-$$
-$$
+
 
 # The Preprocessor
 The preprocessor transform the code before passing it to the compiler. It sees **preprocessor directives** like:
  - `#include` allows for additional code to be placed before your file contents
+
    - in C++, you can **include old C headers** using different names (`<cstdio>` instead of `stdio.h`)
  - `#define VAR VALUE` sets a preprocessor variable `VAR` where all occurrences of it are replaced by `VALUE`
    - obsolete; used ages ago when computing power for looking up a constant was expensive

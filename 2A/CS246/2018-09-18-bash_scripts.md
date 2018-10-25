@@ -25,12 +25,16 @@ fi
 
 __Loops:__
 ```bash
-for i in {1..5}; do
-    echo "Welcome $i"
+for i in {START_VAL..END_VAL..STEP_VAL}; do
+    echo "$i is inclusive"
 done
 
-for i in ~/Documents/*.txt; do
-  echo $i
+for var in ~/Documents/*.txt; do
+  echo $var
+done
+
+for output in $(COMMAND); do
+  echo $output
 done
 ```
 

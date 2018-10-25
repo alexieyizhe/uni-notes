@@ -58,7 +58,7 @@ While defining and initializing structs, you no longer have to write syntax like
 ### Parameter Passing
 Passing a variable by value into a function will hand over a copy of the variable and __leave the original unfazed__ by any changes to it in the function. If you did want to mutate the original variable, you must pass the memory address instead of the value itself.
 
-But why cin >> x and not cin >> &x ? Because C++ has another ptr-like type - __references__.
+But why `cin >> x` and not `cin >> &x` ? Because C++ has another ptr-like type - __references__.
 
 ### References
 References are like __constant ptrs with automatic dereferencing__. Consider the example:

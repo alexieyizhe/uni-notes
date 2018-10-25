@@ -2,13 +2,13 @@
 
 
 # Intro to the Shell
-The shell is the interface to the OS and your method of allowing the OS to perform tasks like running programs, managing files, etc. You can interact with a shell through:
- - A graphical interface (click, touch)
-    - having a UI is easier to reason with
- - Command line interface (typing commands at a prompt)
+The **shell** is the **interface to the OS** and your method of allowing the OS to perform tasks like running programs, managing files, etc. You can interact with a shell through:
+ - A **graphical** interface (click, touch)
+    - Having a UI is easier to reason with
+ - A **command line** interface (typing commands at a prompt)
     - More versatile, powerful, but a bit more clunky
 
-This course uses bash (Bourne Again SHell).
+This course uses **bash** (**B**ourne **A**gain **SH**ell).
 
 ### The Basics
 - A **directory is just a special type of file**, so when we refer to ‘files’ in this course, we include directories in that definition as well.
@@ -20,7 +20,7 @@ This course uses bash (Bourne Again SHell).
 - A globbing pattern (*e.g.* `*`) is a shell capability that matches text based on patterns like the wildcard operator. These aren’t regex, just a functionality implemented by the shell.
 - Using piping hands output to another __program__ or __utility__; output redirection passes output to another __file__ or __stream__.
 - Use `$(CMD_NAME)` to embed commands inside others
- - `"double quotes"` group stuff together, `'single quotes'` completely supress any commands inside
+ - `"double quotes"` group stuff together, `'single quotes'` completely supresses any commands inside
 
 ### Process Streams
 Every running process is attached to 3 streams which are (by default): `stdin`, `stdout`, `stderr`.

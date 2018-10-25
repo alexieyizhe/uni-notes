@@ -118,7 +118,7 @@ This means vec.h is only defined if it has not been already.
 
 
 # Classes
-A __class__ is essentially a struct type that can contain functions:
+A __class__ is essentially a `struct` type that can contain functions:
 ```cpp
 // student.h
 struct Student {

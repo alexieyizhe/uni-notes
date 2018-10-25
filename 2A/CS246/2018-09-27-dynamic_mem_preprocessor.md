@@ -11,7 +11,7 @@ int *p = malloc( SOME_TYPE * sizeof(int))
 free(p);
 ```
 
-Do not use this in C++. Instead, use `new` or `delete`:
+Do not use this in C++. Instead, use `new` and `delete`:
 ```cpp
 struct Node {
   int data;

@@ -2,7 +2,7 @@ __CS 246 |__ Midterm
 
 # Study Guide
 
-
+### Bash & Shell
 
 - Piping (`|`) hands output to another __program__ or __utility__; output redirection (`>`) passes output to another __file__ or __stream__.
 - `stderr` is not buffered unlike other streans `stdin` `stdout`, displays output instantly
@@ -24,6 +24,27 @@ __CS 246 |__ Midterm
 | integer equality                               | `-eq`, `-ne`, `-lt`, `-le`, `-gt`, `-ge`                     |                                                         |
 
 - redirect to `/dev/null` if you want silent output
+
+#### Regex
+
+| Syntax           | Signifies                                                    |
+| ---------------- | ------------------------------------------------------------ |
+| `^`              | Beginning of line                                            |
+| `$`              | End of line                                                  |
+| `|`              | OR groups (`(a|b)` matches stuff that matches either pattern `a` or `b`) |
+| `()`             | Groups                                                       |
+| `\b`             | Word boundary                                                |
+| `\s`             | Whitespace (`\s` for NOT whitespace)                         |
+| `\d`             | Digit                                                        |
+| `.`              | any character except `\n`                                    |
+| `[abc]`, `[a-z]` | `a` or `b` or `c`, letters from `a` to `z`                   |
+| `[^a]`           | NOT `a`                                                      |
+| `*`, `+`         | 0 or more, 1 or more (goes after char to be matched)         |
+| `{n}`            | exactly `n `(goes after char to be matched)                  |
+| `{n, m}`         | any amount from `n` to `m` (goes after char to be matched)   |
+| `?`              | makes preceding pattern ungreedy                             |
+
+
 
 ---
 
@@ -133,6 +154,7 @@ ${EXEC}: ${OBJECTS}
 - don't use `using namespace std;` in `.h` files
 - _separate compilation_ produces `.o` files called __object files__
 - `static` fields and methods are associated with class, not specific instances
+- `int main(int argc, char *argv[]){ }` to get arguments, `argv[0]` is always name of program, so `argc` is off by 1
 
 ---
 
@@ -140,6 +162,35 @@ ${EXEC}: ${OBJECTS}
 
 - the `.d` files keep track of all the dependencies of certain files, essentially creating a list of _all_ files that need to be checked, even if the file itself doesn't change
   - _e.g. changing the `.h` file should recompile the `.cc` file, but the `.cc` file itself doesn't change_ 
+
+```makefile
+CXX = g++
+CXXFLAGS = -std=c++14 -Wall -MMD
+EXEC = canvas
+OBJECTS = canvas.o point.o rectangle.o a3q3.o
+DEPENDS = ${OBJECTS:.o=.d}
+
+${EXEC}: ${OBJECTS}
+	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
+
+-include ${DEPENDS}
+
+.PHONY: clean
+
+clean:
+	rm ${OBJECTS} ${EXEC} ${DEPENDS}
+
+```
+
+---
+
+### Invariants
+
+- 
+
+
+
+---
 
 #### Random
 

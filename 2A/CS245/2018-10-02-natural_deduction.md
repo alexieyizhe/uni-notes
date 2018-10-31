@@ -39,7 +39,7 @@ Some __commonly known derived rules__:
 | $\vee$-elimination ($\vee e$)  | if $\Sigma, \alpha_1 \vdash \beta$ and $\Sigma, \alpha_2 \vdash \beta$, then $\Sigma, \alpha_1 \vee \alpha_2 \vdash \beta$ | $$\frac{\alpha_1 \vee \alpha_2 \ \ \ [\alpha_1 ... \beta] \ \ \ [\alpha_2 ... \beta]}{\beta}$$ |
 | $\rightarrow$-introduction ($\rightarrow i$)  | if $\Sigma, \alpha \vdash \beta$, then $\Sigma \vdash \alpha \rightarrow \beta$ | $$\frac{[\alpha ... \beta]}{\alpha \rightarrow \beta}$$  |
 | $\rightarrow$-elimination ($\rightarrow e$)  | if $\Sigma \vdash \alpha \rightarrow \beta$ and $\Sigma \vdash \alpha$, then $\Sigma \vdash \beta$  | $$\frac{\alpha \rightarrow \beta \ \ \ \alpha}{\beta}$$  |
-| $\perp$-elimination ($\perp i$)  | $\Sigma$, $\alpha$, $\neg \alpha \vdash \perp$  | $$\frac{\alpha \ \ \ \neg \alpha}{\perp}$$  |
+| $\perp$-introduction ($\perp i$) | $\Sigma$, $\alpha$, $\neg \alpha \vdash \perp$  | $$\frac{\alpha \ \ \ \neg \alpha}{\perp}$$  |
 | $\perp$-elimination ($\perp e$)  | if $\Sigma \vdash \perp$, then $\Sigma \vdash \alpha$  | $$\frac{\perp}{\alpha}$$ |
 | $\neg$-introduction ($\neg i$)  | if $\Sigma, \alpha \vdash \perp$, then $\Sigma \perp \neg \alpha$  | $$\frac{[\alpha ... \perp]}{\neg \alpha}$$  |
 | $\neg \neg$-elimination ($\neg \neg e$)  | if $\Sigma \perp \neg \neg \alpha$, then $\Sigma \perp \alpha$  | $$\frac{\neg \neg \alpha}{\alpha}$$  |

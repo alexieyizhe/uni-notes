@@ -9,6 +9,7 @@ Connectives represent a function that __maps truth value(s) to a truth value__.
 
 Let $C$ be a set of connectives.
 A connective is said to be __definable__ in terms of the connectives in $C$ if it can be expressed using _only_ the connectives in $C$.
+
 > Essentially, we can make an equivalent formula using the connectives in $C$.
 
 ### Adequate Set of Connectives
@@ -16,12 +17,12 @@ Let $C$ be a set of connectives.
 $C$ is defined to be __adequate__ _iff_ any _n_-ary connective can be defined in terms of the connectives in $C$.
 > Essentially, a set is adequate if any formula can be re-written into an equivalent formula using only connectives in that set.
 
-_Lemma_: $\{\wedge, \vee, \neg\}$ is an adequate set of connectives.
+==__Lemma__: $\{\wedge, \vee, \neg\}$ is an adequate set of connectives.==
 
-_Theorem_: The set $\{\wedge, \vee \}$ is not adequate.
+==__Theorem__: The set $\{\wedge, \vee \}$ is not adequate.==
 
  - Given an adequate set of connectives $C$ and asked to prove another set $C'$ is adequate, we need to show all connectives in $C$ can be represented using only connectives from $C'$
- - Given a set of connectives $C'$ and asked to show it is _not_ adequate, we need to find a some connective that cannot be constructed from the connectives in $C'$
+ - Given a set of connectives $C'$ and asked to show it is _not_ adequate, we need to find a connective that cannot be constructed from the connectives in $C'$
 
 A set $C$ is __minimally adequate__ _iff_ both $C$ is adequate and every proper subset of $C$ is _not_ adequate.
 

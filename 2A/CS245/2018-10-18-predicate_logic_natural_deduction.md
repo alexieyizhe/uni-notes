@@ -12,7 +12,7 @@ A variable $y$ is __not free__ in a set of well-formed Predicate Logic formulas 
 
 __Ex.__ Not Free Variables
 Let $L$ be a language consisting of variables $w, x, y, z$, and predicate symbols $P^{(2)}, Q^{(1)}$. Then, if
-$$\Sigma = \{(\forall w \ \P(w, x)), (\exists y \ Q(y))\}$$
+$$\Sigma = \{(\forall w \ P(w, x)), (\exists y \ Q(y))\}$$
 we see that each of $w, y, z$ are _not_ free in $\Sigma$ and only $x$ is free.
 
 ---

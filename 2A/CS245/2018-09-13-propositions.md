@@ -25,5 +25,5 @@ A __compound__ proposition can be broken down.
 
 ### Translating English to Propositions
  - Use positive form of propositions
- - Propositions are usually smallest standalone sentences (_e.g._ "He is smart", NOT "Smart")
+ - Propositions are usually smallest the standalone sentences (_e.g._ "He is smart", NOT "Smart")
  - English is ambiguous yikes

@@ -33,12 +33,12 @@ Some __commonly known derived rules__:
 | Name | $\vdash notation$ | Inference Notation |
 | - | - | - |
 | Reflexivity  | $$\Sigma, \alpha \vdash \alpha$$ | $$\frac{\alpha}{\alpha}$$ |
-| $\wedge$-introduction ($\wedge i$) | if $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$, then $\Sigma \vdash \alpha \wedge \beta$  | $$\frac{\alpha \ \ \ \ \beta}{\alpha \wedge \beta}$$  |
-| $\wedge$-elimination ($\wedge e$)  | if $\Sigma \vdash \alpha \wedge \beta$, then $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$ | $$\frac{\alpha \wedge \beta}{\alpha \ \ or \  \ \beta}$$   |
-| $\vee$-introduction ($\vee i$) | if $\Sigma \vdash \alpha$, then $\Sigma \vdash \alpha \vee \beta$ and $\Sigma \vdash \beta \vee \alpha$  | $\frac{\alpha}{\alpha \vee \beta}$ or $\frac{\alpha}{\beta \vee \alpha}$ |
+| $\wedge$-introduction ($\wedge i$) | if $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$, then $\Sigma \vdash \alpha \wedge \beta$  | $$\frac{\alpha \ \ \ \ \beta}{\alpha \wedge \beta}$$ |
+| $\wedge$-elimination ($\wedge e$)  | if $\Sigma \vdash \alpha \wedge \beta$, then $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$ | $$\frac{\alpha \ \wedge  \ \beta}{\alpha \ \ or \  \ \beta}$$ |
+| $\vee$-introduction ($\vee i$) | if $\Sigma \vdash \alpha$, then $\Sigma \vdash \alpha \vee \beta$ and $\Sigma \vdash \beta \vee \alpha$ | $\frac{\alpha}{\alpha \vee \beta}$ or $\frac{\alpha}{\beta \vee \alpha}$ |
 | $\vee$-elimination ($\vee e$)  | if $\Sigma, \alpha_1 \vdash \beta$ and $\Sigma, \alpha_2 \vdash \beta$, then $\Sigma, \alpha_1 \vee \alpha_2 \vdash \beta$ | $$\frac{\alpha_1 \vee \alpha_2 \ \ \ [\alpha_1 ... \beta] \ \ \ [\alpha_2 ... \beta]}{\beta}$$ |
-| $\rightarrow$-introduction ($\rightarrow i$)  | if $\Sigma, \alpha \vdash \beta$, then $\Sigma \vdash \alpha \rightarrow \beta$ | $$\frac{[\alpha ... \beta]}{\alpha \rightarrow \beta}$$  |
-| $\rightarrow$-elimination ($\rightarrow e$)  | if $\Sigma \vdash \alpha \rightarrow \beta$ and $\Sigma \vdash \alpha$, then $\Sigma \vdash \beta$  | $$\frac{\alpha \rightarrow \beta \ \ \ \alpha}{\beta}$$  |
+| $\rightarrow$-introduction ($\rightarrow i$)  | if $\Sigma, \alpha \vdash \beta$, then $\Sigma \vdash \alpha \rightarrow \beta$ | $$\frac{[\alpha ... \beta]}{\alpha \rightarrow \beta}$$ |
+| $\rightarrow$-elimination ($\rightarrow e$)  | if $\Sigma \vdash \alpha \rightarrow \beta$ and $\Sigma \vdash \alpha$, then $\Sigma \vdash \beta$  | $$\frac{\alpha \rightarrow \beta \ \ \ \alpha}{\beta}$$ |
 | $\perp$-introduction ($\perp i$) | $\Sigma$, $\alpha$, $\neg \alpha \vdash \perp$  | $$\frac{\alpha \ \ \ \neg \alpha}{\perp}$$  |
 | $\perp$-elimination ($\perp e$)  | if $\Sigma \vdash \perp$, then $\Sigma \vdash \alpha$  | $$\frac{\perp}{\alpha}$$ |
 | $\neg$-introduction ($\neg i$)  | if $\Sigma, \alpha \vdash \perp$, then $\Sigma \perp \neg \alpha$  | $$\frac{[\alpha ... \perp]}{\neg \alpha}$$  |

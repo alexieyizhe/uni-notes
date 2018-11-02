@@ -21,7 +21,7 @@ A __truth valuation__ is a function that maps propositional variables to the set
 A formula $\alpha$ is a:
  - __tautology__ _iff_ for every truth valuation $t$, $\alpha^t = T$
  - __contradiction__ _iff_ for every truth valuation $t$, $\alpha^t = F$
- - __satisfiable__ _iff_ for every truth valuation $t$, $\alpha^t = T$
+ - __satisfiable__ _iff_ for some truth valuation $t$, $\alpha^t = T$
 
 ### Equivalence
 The formulas $\alpha$ and $\beta$ are __equivalent__ if they have the same truth value under any valuation.

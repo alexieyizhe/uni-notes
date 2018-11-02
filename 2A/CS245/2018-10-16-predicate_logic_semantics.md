@@ -35,14 +35,14 @@ $f(0)^I = f^I(0^I) = 1$
 A __total function__ is a function that has arity $k$ and satisfies $f^I : D^k \rightarrow D$ where every $k$-tuple from the domain must map into the domain. 
 
 A first-order __environment__ is a function that assigns a value in the domain to _every_ variable symbol in the language.
-For any environment $E$ and domain element $d$, the environment "$E$ with $x$ __reassigned__ to $d$", denoted $E[x \mapsto b]$, is defined as:
+For any environment $E$ and domain element $b$, the environment "$E$ with $x$ __reassigned__ to $b$", denoted $E[x \mapsto b]$, is defined as:
 
-1. $E[x \mapsto b](y) = d$, if $y$ is $x$
+1. $E[x \mapsto b](y) = b$, if $y$ is $x$
 2. $E[x \mapsto b](y) = E(y)$, if $y$ is not $x$
 
 > $E[x \mapsto b]$ is just another environment!
 
-> Basically, this means a variable $x$ will become the domain element $d$ ($d$ doesn't have to be another variable, could be another type of symbol) in the environment $E[x \mapsto b]$, and nothing changes otherwise.
+> Basically, this means a variable $x$ will become the domain element $b$ ($b$ doesn't have to be another variable, could be another type of symbol) in the environment $E[x \mapsto b]$, and nothing changes otherwise.
 
 #### Meanings for Expressions
 
@@ -120,7 +120,7 @@ For an interpretation $I$ and environment $E$, we write $I \models_E \Sigma$ _if
 
 We say that $\Sigma$ __semantically entails__ $\alpha$ (or that $\alpha$ is a __logical consequence__ of $\Sigma$), written as $\Sigma \models \alpha$, _iff_ for any interpretation $I$ and environment $E$, we have $I \models_E \Sigma \ \rightarrow \ I \models_E \alpha$. This is also denoted $\alpha^{(I, E)} = T$.
 
-> $\emptyset \models \alpha$ means that $\alpha$ is valid.
+> $\emptyset \models \alpha$ means that $\alpha$ is **valid**.
 
 ---
 

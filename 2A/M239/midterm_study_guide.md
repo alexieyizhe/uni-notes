@@ -70,7 +70,7 @@ __MATH 239 |__ Midterm
 
        $(\{1\}^*\{0\})^*\{1\}^*$ or : $(\{0\}^*\{1\})^*\{0\}^*$
 
-    3. __Block decomposition__: $\{1\}^*(\{0\}\{0\}^*\{1\}\{1\}^*)^*\{0\}^*$
+    3. __Block decomposition__: $\{1\}^*(\{0\}\{0\}^*\{1\}\{1\}^*)^*\{0\}^*$ or $\{0\}^*(\{1\}\{1\}^*\{0\}\{0\}^*)^*\{1\}^*$
 
        1. The part that changes is inside the $()$!! Use that to form the specific property you're looking for
 
@@ -101,7 +101,13 @@ __MATH 239 |__ Midterm
   - To find a recurrence relation:
     1. Multiply denom of fraction over to LS. 
     2. "Expand" generating series (power series with $\sum\limits_{n \geq 0}$) to find terms of $x^0, x^1, x^2, ...$
-    3. Solve for initial conditions, and find a recurrence relation from $a_n$.
+    3. Compare coefficients to get initial conditions and use later terms in the power series to find a recurrence relation.
+  - To find closed form formula for $[x^n]\Phi_S(x)$:
+    1. Use reurrence relation to get characteristic polynomial (example $a_n - a_{n-1} - 2a_{n-2}$ gives CP of $x^2 - x - 2$)
+    2. $[x^n]\Phi_S(x) = (r_1^n)*A + (r_2^n) * B$ where $r_n$ is one of $n$ roots, and $A, B$ are either $A, B, An+B, An^2+Bn+C$, depending on the multiplicity of the root (how many times the root appears, $(x-2)$ has multiplicity 1, $(x - 2)^3$ has multiplicity 3)
+    3. Compare initial conditions with subbing in $n$ for any $n \geq 1$ to part 2 (ex. $a_1 = 0$ means sub in $n = 1$ and set equal to 0)
+    4. Solve for $A, B, C, etc$ to get closed form formula
+    5. Make sure to have separate case for $a_0, (n = 0)​$ (which you can get from initial condition)
   - ==PRACTICE THIS==
 
 - Partial Fractions
@@ -143,6 +149,10 @@ __MATH 239 |__ Midterm
     - An edge is a bridge of a graph _iff_ it is not contained in any cycle of that graph.
     - If there are two distinct paths from a vertex $u$ to a vertex $v$ in $G$,  then $G$ contains a cycle.
 
+  - TIPS:
+
+    - consider vertices at the end of a longest path in a graph
+
 _70% Non-Graph Theory, 30% Graph Theory_
 
 ### Midterm Review Session
@@ -155,7 +165,29 @@ _70% Non-Graph Theory, 30% Graph Theory_
 
    2. Derive a recurrence relation satisfied by $a_n$, where $a_n = |S_n|$.
 
-      $\Phi_S(x) = \$
+      $\Phi_S(x) = $
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

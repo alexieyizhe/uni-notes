@@ -25,3 +25,7 @@ Natural Deduction is complete for Predicate Logic: if $\Sigma \models \alpha$, t
 
 _see proof in Carmen's slides_
 
+---
+
+
+

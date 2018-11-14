@@ -237,6 +237,7 @@ public:
     ...
     void accept(BookVisitor &v) { v.visit(*this); }
 };
+// this is the Visitor pattern in a different form
 ```
 
 

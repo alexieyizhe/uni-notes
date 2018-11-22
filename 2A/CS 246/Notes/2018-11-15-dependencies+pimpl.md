@@ -1,6 +1,6 @@
 __CS 246 |__ Nov 15, 2018
 
-
+# Dependencies
 
 ```cpp
 class Book {

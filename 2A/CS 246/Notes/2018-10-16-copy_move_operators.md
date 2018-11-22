@@ -96,8 +96,8 @@ m = plusOne(n); // assignment from a tmp
 
 Node& operator=(Node&& o) {
     using std::swap;
-    swap(data, o.data);
-    swap(next, o.next);
+    swap(this->data, o.data);
+    swap(this->next, o.next);
     return *this; // o goes out of scope and deletes our data
 }
 ```

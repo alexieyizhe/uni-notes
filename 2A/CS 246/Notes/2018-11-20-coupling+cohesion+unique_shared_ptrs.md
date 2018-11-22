@@ -161,5 +161,35 @@ If you _need_ to be able to copy pointers, first answer the question of __owners
 
 The party responsible for doing so should be a `unique_ptr`, and all other pointers should be regular pointers (you can create these from the `unique_ptr` by fetching the underlying pointer using `unique_ptr::get()`).
 
+### Shared Pointers
+
 If there is __shared ownership__, which is rare, then `std::shared_ptr` should be used.
 
+```cpp
+auto p1 = std::make_shared<MyClass>();
+
+if(...) {
+    auto p2 = p1;
+} // p2 goes out of scope and is popped, but ptr is NOT deleted
+
+// when p1 goes out of scope and is popped, the ptr is deleted
+```
+
+This occurs because `shared_ptr`s maintain a _reference count_ - a count of all `shared_ptr`s pointing at that specific object. When the net count reaches 0, the memory is freed.
+
+A situation where an object is owned by two things is rare, but consider the following Racket code:
+
+```scheme
+(define l1 (cons 1 (cons 2 (cons 3 empty))))
+(define l2 (cons 4 (rest l1)))
+```
+
+In memory, this code looks like this:
+
+`l1`: `1`  — a —> `2`  — b —> `3`
+
+`l2`: `1` — c ———^
+
+In Racket, this is easy to do. In C, maintaining a relationship like this is a nightmare. However, in C++, this is possible if we make $a$ and $b$ in the example above `shared_ptr`s.
+
+Use the type of pointer that accurately reflects the pointers ownership role. This dramatically reduces the opportunity of a memory leak.

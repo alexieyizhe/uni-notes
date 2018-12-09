@@ -59,7 +59,7 @@ However, it's even better if we don't have any output in this class at all.
 
 The__Single Responsibility Principle__ states that _a class should only have one reason to change._
 
-In `Chessboard`, there are two: gameplay & communication. We should be commjunicating with the chessboard via params/results/exceptions, and confine user commincation to be outside of the game class.
+In `Chessboard`, there are two: gameplay & communication. We should be commjunicating with the chessboard via params/results/exceptions, and confine user communication to be outside of the game class.
 
 > Do __not__ communicate in `main`. It is hard, if not impossible, to reuse code in `main`.
 

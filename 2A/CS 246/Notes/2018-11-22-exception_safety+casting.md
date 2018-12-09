@@ -127,32 +127,55 @@ int *ip = (int *) &n; // forces C++ to treat a Node* as an int*
 
 If you must cast, use a C++-style cast - there are 4 kinds:
 
-1. `static_cast`: sensible casting with well-defined meanings
+1. `static_cast`
+2. `reinterpret_cast`
+3. `const_cast`
+4. `dynamic_cast`
 
-   - _ex. converting a `double` to an `int`_
+### Static Casting
 
-     ```cpp
-     double d;
-     void f(int x);
-     void f(double x);
-     f(static_cast<int>(d)) // will call first f()
-     ```
+`static_cast` is sensible casting with well-defined meanings.
 
-   - _ex. converting_ `superclass_ptr` -> `subclass_ptr`
+- _ex. converting a `double` to an `int`_
 
-     ```cpp
-     Book *b = new Text { .. };
-     Text *t = static_cast<Text *>(b);
-     ```
+  ```cpp
+  double d;
+  void f(int x);
+  void f(double x);
+  f(static_cast<int>(d)) // will call first f()
+  ```
 
-2. `reintepret_cast`: **unsafe**, implementation-specific, 'weird conversions'
+- _ex. converting_ `superclass_ptr` -> `subclass_ptr`
 
-   ```cpp
-   Student s;
-   Turtle *t = reinterpret_cast<Turtle *>(&s);
-   ```
+  ```cpp
+  Book *b = new Text { .. };
+  Text *t = static_cast<Text *>(b);
+  ```
 
-3. _covered next lecture_
+### Reinterpret Casting
 
-4. _covered next lecture_
+`reinterpret_cast`: **unsafe**, implementation-specific, 'weird conversions'
+
+```cpp
+Student s;
+Turtle *t = reinterpret_cast<Turtle *>(&s);
+
+class C {
+    int a;
+public:
+    int getA() { return a; }
+};
+
+class RogueC {
+public:
+    int a;
+}
+
+int main() {
+    C val = C {10};
+    RogueC val2 = reinterpret_cast<RogueC *>(&vol);
+	val2->a = 20;
+    cout << val2->getA() << endl; // will print 20 :0
+}
+```
 

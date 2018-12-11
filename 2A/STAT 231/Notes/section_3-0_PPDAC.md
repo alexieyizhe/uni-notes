@@ -1,3 +1,21 @@
+__STAT 231 | __ Section 3.0 (all of Chapter 3)
+
+# PPDAC Algorithm
+
+The steps of this algorithm are:
+
+- **Problem:** A clear statement of the study's objectives.
+  - 
+- **Plan:** The procedures used to carry out the study, including how the data will be collected, what steps to take to measure them, etc.
+- **Data:** The physical collection of the data, as described in the **Plan** step.
+- **Analysis**: The analysis of the data collected, taking into account the **Problem** and the **Plan**.
+  - 
+- **Conclusion**: The conclusions that are drawn about the **Problem** and their limitations.
+
+
+
+### Tips for PPDAC
+
 1. What **type of study** is this and why?
 
    > Think about if the researchers changed/controlled any variates. If so, then it's very likely observational. If there's a survey mentionef in the study, a sample survey is also very likely.
@@ -36,9 +54,7 @@
    > You don't have to reshape the description with your own words; precision matters more so you can reuse the wording in the original article if it answers the question.
 
 9. Give a possible source of sample error for this study based on
-   the information you have stated in 8) and the fact that there are
-   more that ten thousand students in Grades 7 to 9 in the provinces
-   of New Brunswick, Nova Scotia and Prince Edward Island.
+   the information you have stated in 8).
 
 10. What type of numerical summary is the number 2.7 mentioned
     in the article?

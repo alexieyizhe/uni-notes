@@ -2,7 +2,46 @@ __CS 246 |__ Nov 29, 2018 (last​ lecture :cry:)
 
 # Multiple Inheritance
 
-_g_
+A class can inherit from more than 1 class:
+
+```cpp
+class A{ int a; };
+class B{ int b; };
+
+class C: public A, public B {...} // class C will have fields a and b
+```
+
+However, you may have fields that are named the same on two superclasses that a subclass is inheriting from:
+
+```cpp
+class A{ int a; };
+class B{ int a; };
+
+class C: public A, public B {...} // class C will have two fields named a
+
+C c;
+cout << c.a << endl; // this is ambiguous
+
+cout << c.A::a << endl; // this is how you need to say it
+cout << c.B::a << endl;
+```
+
+
+
+Would there be two `a` fields if we have both class `A` and `B` being subclasses of the same superclass `X`, which has an `a` field that the two subclasses inherit from?
+
+We make `X` a **virtual base class**:
+
+```cpp
+class X { int a; };
+
+class A: virtual public X{...};
+class B: virtual public X{...};
+
+class C: public A, public B{...};
+```
+
+
 
 # Template Functions
 

@@ -1,4 +1,4 @@
-__ CS 246 |__ Nov 27, 2018
+__CS 246 |__ Nov 27, 2018
 
 # Casting (cont.)
 
@@ -74,7 +74,8 @@ Text &Text::operator=(const Book &other) {
 }
 ```
 
-# Virtual Methods
 
 
+#Virtual Methods
 
+If we have a virtual method, the class also contains a pointer that's known as a `vptr`. The location of the base class obect is stored in a **Vtable**. 

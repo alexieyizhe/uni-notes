@@ -36,7 +36,7 @@ A ==scatterplot== is used to plot **bivariate** data, with each pair in a value 
 
 ![image-20181209154114957](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/section_1-3-graphs.assets/image-20181209154114957-4388074.png)
 
-We want to find if there is a relatinship between IQ and brain size in the above chart. We introduce an additional measure to judge **correlation** between two variates: the **sample correlation**, given by:
+We want to find if there is a relationship between IQ and brain size in the above chart. We introduce an additional measure to judge **correlation** between two variates: the **sample correlation**, given by:
 
 ![image-20181209154241279](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/section_1-3-graphs.assets/image-20181209154241279-4388161.png)
 

@@ -132,7 +132,7 @@ A 100$p$% confidence interval for $\mu(x) = \alpha + \beta x$ is
 
 ![image-20181211000150547](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/section_6-1+6-2.assets/image-20181211000150547-4504510.png)
 
-_Note that this is basically the same argument we had for deriving a confidence itnerval for $\beta$ above._
+_Note that this is basically the same argument we had for deriving a confidence interval for $\beta$ above._
 
 
 

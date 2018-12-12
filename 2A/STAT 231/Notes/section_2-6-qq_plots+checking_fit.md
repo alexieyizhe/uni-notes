@@ -37,7 +37,7 @@ Using a model that is suitable for the data **should yield similar expected freq
 
 This method deals with __continuous__ data, We can create a relative frequency histogram of the data and place the probability density function of the assumed model on top, and **see how well it matches**.
 
-### Comparing Cumulative Dstribution Functions with Empirical Versions
+####Comparing Cumulative Distribution Functions with Empirical Versions
 
 This method also deals with **continuous data**. Recall the definition of the empirical cumulative distribution function:
 
@@ -45,7 +45,7 @@ This method also deals with **continuous data**. Recall the definition of the em
 
 This is a cumulative distribution function calculated from the set of observed data, and we can compare it to the cumulative distribution function of the assumed model. A model that fits the observed data should have **the _c.d.f_ match the _e.c.d.f_ in terms of fit** pretty well.
 
-### Reading a QQ Plot
+####Reading a QQ Plot
 
 As explained above, QQ plots can indicate if observed data fits a normal distribution model.
 

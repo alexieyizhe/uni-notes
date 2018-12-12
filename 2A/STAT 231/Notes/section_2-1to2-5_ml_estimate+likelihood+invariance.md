@@ -95,5 +95,5 @@ To find the likelihood function and then the m.l. estimate of a distribution $X$
 
 Assume you have a sample size of $n$ and you want to find the expected frequency of $y$, where $y$ is a value of a random variable $Y$ with probability function $P(Y = y; \theta)$. 
 
-1. Substitute your maximum likelihood estimate $\hat\theta $ into $P(Y = y; \theta)$ for a value $\hat p$. 
+1. Substitute your maximum likelihood estimate $\hat\theta $ and the value of $Y$ (which is $y$) into $P(Y = y; \theta)$ for a value $\hat p$. 
 2. Multiply this value by the sample size $n$. This is your **expected frequency** for each value $y$ of $Y$.

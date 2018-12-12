@@ -16,9 +16,7 @@ When we use this data to draw conclusions or say something about a population or
 
 > There is also deductive reasoning, where we use general results to prove specific things (kinda the opposite), like using axioms to create proofs of specific theorems in math.
 
-
-
-In this course, we examine 3 main types of problems:
+In this course, we examine **3 main types of problems**:
 
 #### 1. Estimation Problems
 
@@ -45,9 +43,6 @@ Use the data to predict a future value of a variate for a unite that is selected
 
 Some examples include:
 
-- Given the past performance of a stock and other data, predict
-  the value of the stock at some point in the future
-- Based on the results of a clinical trial, predict how much an
-  individual’s blood pressure would drop for a given dosage of a
-  drug
+- Given the past performance of a stock and other data, predict the value of the stock at some point in the future
+- Based on the results of a clinical trial, predict how much an individual’s blood pressure would drop for a given dosage of a drug
 

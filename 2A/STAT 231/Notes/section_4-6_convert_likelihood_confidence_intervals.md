@@ -18,14 +18,14 @@ We can approximate a 100$q$% confidence interval for $\theta$ using likelihood w
 
 ![image-20181210142230731](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/section_4-6.assets/image-20181210142230731-4469750.png)
 
-So, to convert a confidence interval to a likelihood interval:
+So, to **convert a confidence interval to a likelihood interval**:
 
 ==__Theorem:__ A 100$q$% confidence interval is an approximate 100$p$% likelihood interval where $p = e^{-c/2}$ and $q = P(|Z| \leq \sqrt{c}) = 2P(Z \leq \sqrt{c}) - 1 , Z \sim N(0, 1) $.==
 
 1. Identify the appropriate $c$ for the desired confidence interval $p$ by choosing $c$ such that $p = P(W \leq c) = P(|Z| \leq \sqrt{c})$.
 2. The likelihood interval is all $R(\theta) \geq e^{-c/2}$, so it is a 100$(e^{-c/2})$% confidence interval.
 
-Inversely, to convert a likelihood interval to a confidence interval:
+Inversely, to **convert a likelihood interval to a confidence interval**:
 
 ==__Theorem:__ A 100$p$% likelihood interval is an approximate 100$q$% confidence interval where $q = 2P(Z \leq \sqrt{-2log(p)}) - 1$ and $Z \sim N(0, 1)$.==
 

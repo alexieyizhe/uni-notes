@@ -20,6 +20,8 @@ A ==quartile== is just one of the 25^th^, 50^th^, or 75^th^ percentiles:
 - $q(0.5)$ or the 50^th^ percentile is known as the ==median==
 - $q(0.75)$ or the 75^th^ percentile is known as the ==upper/third quartile==
 
+
+
 ### Numerical Summaries
 
 Let the data be represented by $\{y_1, y_2, ..., y_n\}$ where $y_i$ is a real number and our sample size is $n$. First, note that the idea of an __ordered sample__ is a sorted version of the data set, and is denoted $y_{(1)}, y_{(2)},...,y_{(n)}$ where $y_{(1)} \leq y_{(2)} \leq ... \leq y_{(n)}$. 

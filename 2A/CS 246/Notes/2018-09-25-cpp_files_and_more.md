@@ -21,7 +21,7 @@ int main() {
       } // file is automatically closed when the ifstream (f) goes out of scope
 }
 ```
-<br/>
+
 
 > Anything that you can do with cin/cout, you can do with an `ifstream`/`ofstream`.
 
@@ -75,12 +75,12 @@ You __cannot__ do the following with references:
  - Create a pointer to a reference
    - a reference to a pointer is fine though
  - Create a reference to a reference
-   - __WARNING:__ this will compile, but is syntax for something different - be careful!
+   - __WARNING:__ this will compile, but is syntax for something different (deals with rvalues) - be careful!
  - Create an array of references
 
 You __can__ do the following with references:
  - Pass them as function parameters
-   - useful for keeping the speed of pass-by-value while not needing to dereference every time you use it in the f'n
+   - useful for keeping the speed of pass-by-pointer while not needing to dereference every time you use it in the f'n
  - Set a reference to const
    - useful in same case as above but with the added requirement of the f'n not modifying the value  
    - also allows you to pass in values that are not normally lvalues - so:

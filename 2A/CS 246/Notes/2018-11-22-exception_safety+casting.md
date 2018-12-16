@@ -9,7 +9,7 @@ There are 3 levels of exception safety:
 2. __Strong guarantee:__ If an exception is raised while executing `f()`, the state of the program will be as if `f()` had not been called.
    - Either we get all the effects of `f()` (if it runs successfully) or we get none of the effects.
 3. __No-throw guarantee:__ `f()` will never throw an exception and will always achieve its purpose.
-   - This means you can't just never throw and supress any exceptions, because it'll defeat the purpose.
+   - This means you can't just never throw and suppress any exceptions, because it'll defeat the purpose.
 
 ```cpp
 class A {...};
@@ -29,7 +29,7 @@ public:
 // is C::f() exception safe?
 ```
 
-`C::f()` is _probably_ __not__ exception safe:
+`C::f()` is _probably_ __not__ exception safe, just a basic guarantee:
 
 1. If `a.g()` throws, nothing has happened yet so it's ok.
 2. If `a.g()` runs successfully but `b.h()` throws, the effects of `a.g()` would have to be undone to offer the strong guarantee - which is very hard or impossible if `g()` has non-local side effects.
@@ -114,6 +114,7 @@ MyClass &operator=(MyClass &&other) noexcept { ... }
 
 If you know that a function will never throw or propogate an exception, declare it `noexcept` - this facilitates optimization. At minimum, moves + swaps should be `noexcept`s.
 
+
 # Casting
 
 In C, casting is done like so:
@@ -145,7 +146,7 @@ If you must cast, use a C++-style cast - there are 4 kinds:
   f(static_cast<int>(d)) // will call first f()
   ```
 
-- _ex. converting_ `superclass_ptr` -> `subclass_ptr`
+- _ex. converting_ `SUPERCLASS_ptr` to `SUBCLASS_ptr` or  vice versa (`SUBCLASS_ptr` to `SUPERCLASS_ptr`)
 
   ```cpp
   Book *b = new Text { .. };
@@ -172,8 +173,8 @@ public:
 }
 
 int main() {
-    C val = C {10};
-    RogueC val2 = reinterpret_cast<RogueC *>(&vol);
+    C *val = new C{10};
+    RogueC *val2 = reinterpret_cast<RogueC *>(&val);
 	val2->a = 20;
     cout << val2->getA() << endl; // will print 20 :0
 }

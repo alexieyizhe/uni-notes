@@ -1,55 +1,13 @@
 __CS 246 | __Oct 23, 2018
 
-# Working with the `LinkedList` class
-
-```cpp
-// list.h
-class List {
-    struct Node; //private nested class - only accessible within the List class
-    Node *theList = nullptr;
-    
-public:
-    void addToFront(int n);
-    int &ith(int i); // reference allows us to mutate items in list directly
-    ~List();
-}
-
-
-// list.cc
-#include "list.h"
-
-struct List::Node {
-    int data;
-    Node *next;
-    Node(...): ... {...} // constructor
-    ~Node() { delete next; }
-}
-
-void List::addToFront(int n) {
-    theList = new Node{n, theList};
-}
-
-int &List::ith(int i) {
-    Node *cur = theList;
-    for(int n = 0; n < i; n++, cur=cur->next);
-    return cur->data;
-}
-```
-
-Now, only `List` can create/manipulate `Node` objects, so we can guarantee the invariant that `next` is always either `nullptr` or allocated by `new`.
-
-However, now we can't traverse the list from `Node` to `Node` as we would a normal `LinkedList` without calling `ith()`, which is already $O(n)$ time itself.
-
-
-
 # Design Patterns
 
 Certain programming problems arise often and we use __design patterns__ to keep track of solutions to these problems for reuse and mass adoption.
 
 ### Iterator ==Pattern==
 
-**Problem:** we can't trust the user to access `Nodes`.
-**Solution:** create a class that manages access to nodes
+**Problem:** Recall the `LinkedList` class from last lecture: we can't trust the user to create `Nodes`, but solving that means we can't access existing `Nodes` efficiently. 
+**Solution:** Create a class that manages access to nodes efficiently but still prevents clients from accessing pointers directly.
 
 > Essentially, we create an abstraction of a pointer and walk the list without exposing the actual pointers.
 
@@ -94,7 +52,7 @@ int main() {
 auto x = y;
 ```
 
-The above code declares `x` to be the same type as its initializer (`y` in this case).
+The above code declares `x` to be the same type as its initializer (will be same type as`y`, in this case).
 
 For the `List` and `Iterator` example:
 
@@ -125,7 +83,7 @@ for(auto &n:l) { // just declare it as references!
 
 ### Back to Encapsulation
 
-In the `List` example, the client cannot create iterators _except for one_:
+In the `List` example, the client cannot create iterators since it cannot have `Node` pointers _except for one_:
 
 ```cpp
 auto it = List::Iterator{nullptr};
@@ -151,7 +109,7 @@ public:
 
 Now, `List` can still create `Iterator`s, but the client can only create `Iterator`s by calling `begin()` or `end()`.
 
-> Classes should be introverts: give them as few friends as possible since it weakens encapsulation.
+> Even knowing this, classes should be introverts: give them as few friends as possible since it *weakens* encapsulation.
 
 For a better way to provide access to `private` fields, you want to write __accessor__ and __mutator__ methods.
 

@@ -1,6 +1,6 @@
 __CS 246 | __Oct 11, 2018
 
-# C++ Copying
+# C++ Copy Constructor
 
 Consider the following copying method:
 

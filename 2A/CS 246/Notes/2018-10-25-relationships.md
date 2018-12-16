@@ -191,7 +191,7 @@ public:
 }
 ```
 
-If you want to give subclass access to certain members, we cause `protected` visibility, like so:
+If you want to give subclass access to certain members, we can use `protected` visibility, like so:
 
 ```cpp
 class Book {

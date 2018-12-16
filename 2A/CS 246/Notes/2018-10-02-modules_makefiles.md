@@ -139,7 +139,7 @@ Student s { 60, 70, 80 };
 
 cout << s.grade() << endl;
 ```
- - There is a `class` keyword in C++ (more on that later)
+ - There is a `class` keyword in C++ (not the same as this concept of a class - more on that later)
  - An __object__ is an instance of a class
  - The function `grade()` is called a __member function__ or __method__
     - The `Student::` syntax is a scope resolution operator that tells us that `grade()` belongs to the `Student` class

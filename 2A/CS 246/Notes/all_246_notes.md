@@ -2581,7 +2581,7 @@ __Ex. Digital Media__
 // initial implementation
 class DigitalMedia {
 public:
-    virtual voide play() = 0;
+    virtual void play() = 0;
 };
 
 // NVI-approved implementation
@@ -2595,7 +2595,7 @@ public:
     }
     
 private:
-    virtual voide doPlay() = 0; // subclasses override this method
+    virtual void doPlay() = 0; // subclasses override this method
 };
 ```
 

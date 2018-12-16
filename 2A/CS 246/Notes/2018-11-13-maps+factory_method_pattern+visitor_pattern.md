@@ -6,8 +6,6 @@ __CS 246 |__ Nov 13, 2018
 
 This pattern is used when a creator class relies on different subclasses to do different things.
 
-
-
 #### UML Diagram
 
 ![Image result for factory method design pattern uml](https://upload.wikimedia.org/wikipedia/commons/e/ed/Factory_Method_UML_class_diagram.png)
@@ -150,8 +148,6 @@ Maps are a part of the STL. They are used for creating dictionaries: "arrays" th
 | `m.erase("abc");`            | Removing pair from map                                       |
 | `cout << m["ghi"];`          | Accessing pair in map (if `key` is not present, it is inserted with the value default constructed) |
 | `if(m.count("abc")) { ... }` | Checking for existence of key in map (returns `0` if not found, `1` if found) |
-
-
 
 > Lushman says: use `map` if you want to implement a balanced BST.
 

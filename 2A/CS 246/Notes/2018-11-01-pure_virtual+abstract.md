@@ -73,6 +73,8 @@ To write your own operations:
 ```cpp
 Text::Text(const Text &other): Book{other}, topic{other.topic} {}
 
+
+// copy assignment operator
 Text & Text::operator=(const Text &other) {
     Book::operator=(other);
     topic=other.topic;
@@ -80,9 +82,12 @@ Text & Text::operator=(const Text &other) {
     return *this;
 }
 
+// move constructor
 Text::Text(Text &&other): Book{std::move(other)}, topic{other.topic} {}
 
-Text & Text::operator=(const Text &other) {
+
+// move assignment operator
+Text & Text::operator=(Text &&other) {
     Book::operator=(std::move(other));
     topic = std::move(other.topic);
     

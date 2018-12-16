@@ -214,15 +214,7 @@ __STAT 231 |__ Final Study Guide
 
 
 
-
-
-
-
-
-
-
-
-### Things to put
+### Additional Notes
 
 - To find likelihood function and maximum likelihood estimate
 
@@ -289,24 +281,9 @@ __STAT 231 |__ Final Study Guide
 
     $p-value = 2[1 - P(Z \leq \sqrt \lambda)]$ where $Z \sim G(0, 1)$ 
 
--  ![image-20181211162605028](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/final_study_guide.assets/image-20181211162605028-4563565.png)
+- ![image-20181211162605028](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/final_study_guide.assets/image-20181211162605028-4563565.png)
 
 - 'a linear regression on $y$ of $x$' means $E[Y] = \alpha + \beta x$
 
 - confidence interval is NOT ALWAYS symmetric around the maximum likelihood estimate
 
-- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-![image-20181210004009372](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/final_study_guide.assets/image-20181210004009372-4420409.png)

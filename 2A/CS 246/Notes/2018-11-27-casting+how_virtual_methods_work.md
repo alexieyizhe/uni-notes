@@ -35,7 +35,8 @@ if(pt) { cout << pt->getTopic(); }
 else { cout << "pt is not a book" << endl; }
 ```
 
-If the cast works (meaning that `*pb` is actually a `Text` or a subclass of `Text`), `pt` will point at a `Text` object created from `pb`. If the cast _fails_, `pt` will be a `nullptr`.
+If the cast works (meaning that `*pb` is actually a `Text` or a subclass of `Text`), `pt` will point at a `Text` object created from `pb`. 
+If the cast _fails_, `pt` will be a `nullptr`.
 
 We can use this and `static_pointer_cast` and `dynamic_pointer_cast` to work with pointers to __make decisions based on the Runtime Type Information (RTTI)__. 
 
@@ -47,7 +48,7 @@ void whatIsIt(shared_ptr<Book> b) {
 }
 ```
 
-However, code like this is tightly coupled ot the `Book` class and may indicate **bad design**. A better solution is virtual methods, or a Visitor ==Design Pattern==.
+However, code like this is tightly coupled to the `Book` class and may indicate **bad design**. A better solution is virtual methods, or a Visitor ==Design Pattern==.
 
 _Dynamic casting_ also works with references, like so:
 
@@ -57,7 +58,7 @@ Book &b = t;
 Text &t2 = dynamic_cast<Text &>(b); 
 ```
 
-If `b` points to a `Text`, `t2` is a reference to the same `Text`. Otherwise, it raises an exception (since there's no such thing as a null exception to mimic the behaviour of `dynamic_cast` with `nullptr`).
+If `b` points to a `Text`, `t2` is a reference to the same `Text`. Otherwise, it raises an exception (since there's no such thing as a null reference to mimic the behaviour of `dynamic_cast` with `nullptr`).
 
 > Dynamic casting works with only classes with at least one virtual method.
 
@@ -78,4 +79,44 @@ Text &Text::operator=(const Book &other) {
 
 #Virtual Methods
 
-If we have a virtual method, the class also contains a pointer that's known as a `vptr`. The location of the base class obect is stored in a **Vtable**. 
+The size of a class with a `virtual` method is larger than one without. 
+
+Consider:
+
+```cpp
+Book *pb = new ___
+pb->isHeavy();
+```
+
+The compiler chooses which version of `isHeavy` to run based on the type of the actual object, which is only determined at runtime. So how does it choose?
+
+For each class with `virtual` methods, the compiler creates a table of pointers that point to implementations of functions, known as a __vtable__. These objects will also contain a pointer known as a __vptr__ that points to the vtable.
+
+Consider:
+
+```cpp
+class C {
+    int x, y;
+    virtual void f();
+    virtual void g();
+    void h();
+    virtual ~C();
+};
+
+// in main.cc
+C c, d;
+```
+
+![Vtable 1](/Users/alexieyizhe/Google Drive/University/2A/CS 246/Notes/2018-11-27-casting+how_virtual_methods_work.assets/CS246_Lecture23_Nov_27_vtable_Diagram1.jpg)
+
+![Vtable 2](/Users/alexieyizhe/Google Drive/University/2A/CS 246/Notes/2018-11-27-casting+how_virtual_methods_work.assets/CS246_Lecture23_Nov_27_vtable_BookAndText.jpg)
+
+When you call a `virtual` method, a series of steps happen:
+
+1. Follow _vptr_ to _vtable_
+2. Find pointer to the `virtual` method on the _vtable_
+3. Call the method from the pointer.
+
+Because all of this happen at runtime and adds a pointer to the object instance, `virtual` method calls incur a small cost, and an increased space cost.
+
+The exact details of how it stores all of this in memory is compiler dependent, but `g++` places the _vptr_ first, then the rest of the object fields.

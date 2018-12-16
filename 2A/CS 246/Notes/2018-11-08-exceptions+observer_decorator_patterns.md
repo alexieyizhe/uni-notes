@@ -150,7 +150,7 @@ The following classes exist:
 
 #### Implementation
 
-We take the example of a pizza. _yum_
+We take the example of a :pizza: _yum_
 
 ```cpp
 class Pizza {
@@ -187,8 +187,7 @@ public:
     string desc() { return component->desc() + " with Stuffed Crust"; }
     
 };
-
-// similarly for other subclasses like toppings, dipping sauce, etc
+// code is similar for other subclasses like toppings, dipping sauce, etc
 ```
 
 

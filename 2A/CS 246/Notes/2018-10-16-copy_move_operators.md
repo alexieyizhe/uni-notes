@@ -36,7 +36,7 @@ struct Node {
 }
 
 Node& operator=(const Node& o) {
-    Node tmp = o; // calls the copy constructor
+    Node tmp{o}; // calls the copy constructor
     swap(tmp);
     return *this;
     // tmp is deleted once it goes out of scope
@@ -59,7 +59,7 @@ Node m2;
 m2 = n; // copy assignment operator
 
 Node plusOne(Node n) {
-    for (Node* p = &n; p; p = n-> next) {
+    for (Node* p = &n; p; p = p->next) {
         p.data++;
     }
     return n;

@@ -123,6 +123,7 @@ struct XWindowImpl {
     unsigned long colours[10];
 };
 
+
 // Window.h
 class XWindowImpl; // forward declaration
 
@@ -131,6 +132,7 @@ class XWindow {
 public:
     ... // no change from previous XWindow class
 };
+
 
 // Window.cc
 #include "Window.h"
@@ -142,7 +144,9 @@ XWindow::XWindow(...): pImpl{ new XWindowImpl } {...}
 // s becomes pImpl->s
 ```
 
-Now, there's no need to include `Xlib.h`, and there is no compilation dependency on `XWindowImpl.h`. This means that clients also don't depend on `XWindowImpl.h`. If you keep all private fields in this `XWindowImpl.h`, then only `Window.cc` needs to be recompiled if you change `XWindow`'s implementation.
+Now, there's no need to include `Xlib.h`, and there is no compilation dependency on `XWindowImpl.h`. This means that clients also don't depend on `XWindowImpl.h`. 
+
+If you keep all private fields in this `XWindowImpl.h`, then only `Window.cc` needs to be recompiled if you change `XWindow`'s implementation.
 
 
 Furthermore, if you have several possible window implementations (_e.g. `XWindow`s and also `YWindow`s_), you can make the `Impl` struct a superclass:

@@ -25,8 +25,6 @@ Cohesion is a measure of how closely elements of a module are related to each ot
 
 Ultimately, our goal is to aim for ==low== coupling and `high` cohesion.
 
-
-
 ## Decoupling the Interface
 
 Your primary program classes should not print anything:
@@ -59,7 +57,7 @@ However, it's even better if we don't have any output in this class at all.
 
 The__Single Responsibility Principle__ states that _a class should only have one reason to change._
 
-In `Chessboard`, there are two: gameplay & communication. We should be commjunicating with the chessboard via params/results/exceptions, and confine user communication to be outside of the game class.
+In `Chessboard`, there are two: gameplay & communication. We should be communicating with the chessboard via params/results/exceptions, and confine user communication to be outside of the game class.
 
 > Do __not__ communicate in `main`. It is hard, if not impossible, to reuse code in `main`.
 
@@ -70,14 +68,13 @@ To do so, we create a class solely for interaction that is separate from the cla
 In MVC, we separate the dinstinct notions of a program into three aspects:
 
 - __Model__: the data being represented
+- __View__: the presentation of the data
   - Can have multiple views (_e.g. having both text and graphical output_)
   - Doesn't need to know about implementation details
   - Can implement the classic Observer ==Design Pattern==
-- __View__: the presentation of the data
 - __Controller__: the manipulation of the data
   - Mediates control flow between model and view
   - May communicate with the user for input (or the View could do that)
-
 
 
 # Exception Safety
@@ -113,7 +110,11 @@ However, this is ugly and creates code duplication. The only thing you can count
 
 Every resource should be wrapped in a stack-allocated object, whose destructor deletes the object. For example, take `ifstream f{"file"};`: acquiring the resource (`"file"`) = initializing the object (`f`).
 
-This can be done with dynamic memory using a __unique pointer.__
+This can be done with dynamic memory using a __unique pointer__, a type of smart pointer.
+
+
+
+# Smart Pointers
 
 ### Unique Pointers
 
@@ -122,8 +123,8 @@ The `std::unique_ptr<T>` class is found in the `<memory>` module. It takes a `T 
 ```cpp
 void f() {
     MyClass mc;
-    std::unique_ptr<MyClass> p{new MyClass};         // Both of these are
-    auto p = std::make_unique<MyClass>( /*args*/ );  // valid options.
+    std::unique_ptr<MyClass> p{new MyClass{ /*args*/ }}; // Both are
+    auto p = std::make_unique<MyClass>( /*args*/ );      // valid options.
 } // This will never leak. Guaranteed.
 
 
@@ -190,6 +191,6 @@ In memory, this code looks like this:
 
 `l2`: `1` — c ———^
 
-In Racket, this is easy to do. In C, maintaining a relationship like this is a nightmare. However, in C++, this is possible if we make $a$ and $b$ in the example above `shared_ptr`s.
+In Racket, this is easy to do. In C, maintaining a relationship like this is a nightmare. However, in C++, this is possible if we make $a$ and $c$ in the example above `shared_ptr`s.
 
 Use the type of pointer that accurately reflects the pointers ownership role. This dramatically reduces the opportunity of a memory leak.

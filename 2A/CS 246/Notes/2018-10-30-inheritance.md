@@ -28,7 +28,7 @@ public:
 
 // create instances of the classes
 Book b{...,..., 50};
-Comic c{...,...,40, ...};
+Comic c{...,..., 40, ...};
 cout << b.isHeavy(); // FALSE
 cout << b.isHeavy(); // TRUE
 ```
@@ -50,7 +50,7 @@ Comic c = {...,..., 40,...};
 Book *pb = &c;
 Comic *pc = &c;
 pc->isHeavy(); // TRUE
-pc->isHeavy(); // FALSE - why?
+pb->isHeavy(); // FALSE - why?
 ```
 
 The `Book::isHeavy` method is still invoked for the `pb` pointer. The compiler uses the type of the pointer/reference to decide which `isHeavy()` method to run - it _doesn't consider the actual type of the object_. The same object behaves differently depending on what is being used to access it.
@@ -157,8 +157,6 @@ public:
 > We do not need to use the `override` keyword for subclasses, since a destructor has only one signature (no possible mismatch in subclass methods).
 
 __Always__ make the destructor virtual in classes that are meant to have subclasses - even if the destructor doesn't do anything (since subclasses might have destructors that do stuff that need to be called instead).
-
-
 
 If a class is _not_ meant to have subclasses, declare it so using the `final` keyword:
 

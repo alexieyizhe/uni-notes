@@ -32,7 +32,7 @@ struct Vec {
 };
 ```
 
-However, this makes `Vec` the virst operand, not the second. You would have to use it like so: `v << cout`, which is confusing. So, we define operator `<<`, `>>` as _non-members_.
+However, this makes `Vec` the first operand, not the second. You would have to use it like so: `v << cout`, which is confusing. So, we define operator `<<`, `>>` as _non-members_.
 
 > Certain operators must be members:
 >
@@ -52,10 +52,10 @@ struct Vec {
     Vec(int x, int y): x{x}, y{y}{}
 };
 
-// this is WRONG, since the default constructor will be called but no default
-// constructor exists (thus the items cannot be initialized)
-Vec *vp = new Vec[10];
-Vec moreVecs[10];
+
+
+Vec *vp = new Vec[10];  // WRONG, default constructor will be called but no default
+Vec moreVecs[10];	    // constructor exists (so the items can't be initialized)
 ```
 
 Our options to fix the above are:
@@ -78,8 +78,7 @@ Our options to fix the above are:
    ... // do whatchu gotta do
    // make sure to DELETE ONCE YOU'RE DONE WITH THE ARRAY
    for(int i = 0; i < 5; i++) delete vp[i];
-   delete []vp;
-   
+   delete [] vp;
    ```
 
 
@@ -179,7 +178,7 @@ Node n3{4, &n2};
 
 This will cause _undefined behaviour_ when we try to delete `n3`, since the destructor tries to delete `&n2`, but `n2` is on the stack - we can only delete stuff that's on the heap!
 
-`Node` relies on an assumption for its proper operation - that `next` is either `nullptr`, or was allocated by `new`. This is an __invariant__ - a statement that must hold trie - that `Node` relies on.
+`Node` relies on an assumption for its proper operation - that `next` is either `nullptr`, or was allocated by `new`. This is an __invariant__ - a statement that must hold true - that `Node` relies on.
 
 However, we can't guarantee this invarient; we can't trust the user to use `Node` properly. To _enforce invarients_, we use __encapsulation__. 
 
@@ -202,7 +201,7 @@ public:
 
 
 
-### Classes
+# Classes
 
 It's always better to have default visibility be `private`. So, we switch from `struct` to `class`:
 
@@ -228,4 +227,46 @@ public:
     ...
 }
 ```
+
+
+
+### Example: The `LinkedList` Class
+
+```cpp
+// list.h
+class List {
+    struct Node; //private nested class - only accessible within the List class
+    Node *theList = nullptr;
+    
+public:
+    void addToFront(int n);
+    int &ith(int i); // reference allows us to mutate items in list directly
+    ~List();
+}
+
+
+// list.cc
+#include "list.h"
+
+struct List::Node {
+    int data;
+    Node *next;
+    Node(...): ... {...} // constructor
+    ~Node() { delete next; }
+}
+
+void List::addToFront(int n) {
+    theList = new Node{n, theList};
+}
+
+int &List::ith(int i) {
+    Node *cur = theList;
+    for(int n = 0; n < i; n++, cur=cur->next);
+    return cur->data;
+}
+```
+
+Now, only `List` can create/manipulate `Node` objects, so we can guarantee the invariant that `next` is always either `nullptr` or allocated by `new`.
+
+However, now we can't traverse the list from `Node` to `Node` as we would a normal `LinkedList` without calling `ith()`, which is already $O(n)$ time itself.
 

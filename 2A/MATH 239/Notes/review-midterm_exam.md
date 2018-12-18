@@ -2,30 +2,32 @@ __MATH 239 |__ Midterm
 
 # Study Guide
 
-- Counting
+### Combinatorics
+
+- **Counting**
 
   - There are $n \choose k$ $k$-element subsets of an $n$-element set
-  - $2^n$ total subsets of an $n-element set
+  - $2^n$ total subsets of an $n$-element set
 
-- Bijections
+- **Bijections**
 
   - To show a bijection between two sets, you have the following options:	
     1. Determine a function $f$ and its inverse $f^{-1}$ such that for any set of values $(a_1, ...,a_n)$ in the first set, $f((a_1, ..., a_n)) = (b_1, ..., b_m)$ where $(b_1, ..., b_m) \in$ the second set, and $f^{-1}((b_1, ..., b_m)) = (a_1, ..., a_n)$.
   - To determine if $LS = RS$, find two sets that describe each side respectively, and show that there's a bijection between the two sets!
 
-- Combinatorial Proofs
+- **Combinatorial Proofs**
 
   - Find bijections lol
   - $(1+x)^n = \sum\limits_{k = 0}^n {n \choose k} x^k$
   - 
 
-- Series
+- **Series**
 
   - Sum of an infinite geometric series:
     - $\sum\limits_{n = 0}^{\infty}ar^n = \frac{a}{1-r}$
   - A generating series is a way to represent, given a specific weight function $w$ and a set of configurations $S$, the number of elements in $S$ with weight $k$ is $a_k$, where $\Phi_S(x) = \sum\limits_{a \in S}x^{w(a)} = \sum\limits_{k = 0}^{\infty}a_kx^k$.
 
-- Formal Power Series
+- **Formal Power Series**
 
   - $\sum\limits_{n = 0}^{\infty}a_nx^n$ is a formal power series
   - A formal power series has an __inverse__ _iff_ it has a non-zero constant term. If the constant term is non-zero, the inverse is unique.
@@ -35,7 +37,7 @@ __MATH 239 |__ Midterm
     - Let $P(x) = 1-x$, write the original $f(x)$ in terms of $P(a)$, then $f^{-1} = P(a)^{-1} $.
     - ![image-20181105224931292](/Users/alexieyizhe/Documents/Projects/uni-notes/2A/M239/image-20181105224931292.png)
 
-- Sum/Product Lemmas
+- **Sum/Product Lemmas**
 
   - ==___Sum Lemma:_ Let $A, B$ be a partition of a set $S$ ($A$ and $B$ are disjoints sets whose union is $S$). Then:__==
     $$\Phi_S(x) = \Phi_A(x) + \Phi_B(x)$$
@@ -48,7 +50,7 @@ __MATH 239 |__ Midterm
     2. The weight functions don't match. 
        _ex._ Let $A=\{2, 3, 4\}, \alpha(a) = a$ and $B = \{1, 5\}, \beta(b) = b$. Then, $\Phi_A(x) = x^2 + x^3 + x^5, \Phi_B(x) = x+ x^5$. Then, let $A \times B = \{(2, 1), (3, 1), (4, 1), ...\}$ and $w((a,b)) = 3a + 2b$, but in order for the Product Lemma  to apply, it would produce a $w((a,b)) = a + b$ instead.
 
-- Integer Compositions (compositions of parts that make up $n$)
+- **Integer Compositions (compositions of parts that make up $n$)**
 
   - There are ${n - 1} \choose {k- 1}$ compositions of $n$ with $k$ parts
   - In general, to solve problems along the lines of `how many compositions of n are there with ... (some property)`:
@@ -58,9 +60,9 @@ __MATH 239 |__ Midterm
     4. Try to find an explicit formula for $[x^n]\Phi_S(x)$ or try to simplify if possible with series, etc
   - Look at Chapter 2.2!!!
 
-- Binary Strings
+- **Binary Strings**
 
-- Binary Decompositions
+- **Binary Decompositions**
 
   - 3 ways to decompose:
 
@@ -94,9 +96,9 @@ __MATH 239 |__ Midterm
 
     1. 
 
-- Finding Coefficients (==look at chapter 3.1==)
+- **Finding Coefficients (==look at chapter 3.1==)**
 
-- Homogeneous Recurrences (Recurrence Relations)
+- **Homogeneous Recurrences (Recurrence Relations)**
 
   - To find a recurrence relation:
     1. Multiply denom of fraction over to LS. 
@@ -110,70 +112,50 @@ __MATH 239 |__ Midterm
     5. Make sure to have separate case for $a_0, (n = 0)​$ (which you can get from initial condition)
   - ==PRACTICE THIS==
 
-- Partial Fractions
-
-- Graph Theory
-
-  - A __graph__ is an ordered pair $(V, E)$ of finite sets $V$ and $E$ such that $E$ (an __edge__) is a set of subsets of $V$ (a __vertex__) of size 2.
-
-  - ==__Handshake Lemma__: Let $(V, E)$ be a graph. Then, $\sum\limits_{v \in V} deg(v) = 2|E|$==
-
-    - __Corollary:__ Every graph has an even number of vertices with odd degree.
-
-  - Isomorphism
-
-    - Find 1:1 correspondence (bijection!!) between vertices of two graphs to prove isomorphism
-
-  - Bipartite Graphs: a graph that can be partitioned evenly into two sets such that every edge has one side in one set and the other in the other set.
-
-  - Paths/Cycles
-
-    - A __walk__ is any linear series of vertices all connected (doesn't have to be unique)
-    - A __path__ is a walk with all vertices in it being unique
-    - ==__Lemma^1^__: If every vertex in a graph $G$ has degree at least 2, then $G$ has a cycle.==
-    - Every cycle in a bipartite graph has **even** length.
-
-  - Connections: a graph is connected if for any two vertices $x, y$, there is a path from $x$ to $y$.
-
-    - A component of $G$ is a subgraph $C$ of $G$ such that 
-
-      1. $C$ is connected
-
-      2. No subgraph of $G$ that properly contains $C$ is connected
-
-         _basically a component is a subgraph of $G$ that is maximally connected_
-
-  - Bridges: an edge $e$ of a graph $G$ is a __bridge__ if $G - e$ has more components than $G$.
-
-    - _basically an edge is a bridge if removing it splits the graph_
-    - An edge is a bridge of a graph _iff_ it is not contained in any cycle of that graph.
-    - If there are two distinct paths from a vertex $u$ to a vertex $v$ in $G$,  then $G$ contains a cycle.
-
-  - TIPS:
-
-    - consider vertices at the end of a longest path in a graph
-
-_70% Non-Graph Theory, 30% Graph Theory_
-
-### Midterm Review Session
-
-1. Let $S_n$ be the set of compositions of $n$ where each part is greater than 1.
-
-   1. Prove that $|S_n| = [x^n]\frac{1-x}{1-x-x^2}$.
-
-      Let $S$ be the set of all compositions where each part $\geq 2$. Then, $S = \cup_{i \geq 0}S_i = \cup_{i \geq 0} \N^i_{\geq2}, \N_{\geq 2} = \{2, 3, 4,...\}$ Then, $\Phi_S(x) = \sum\limits_{i \geq 0}(\Phi_{\N_{\geq 2}}(x))^i = \sum\limits_{i \geq 0}(x^2+x^3+...)^i = \sum\limits_{i \geq 0}(\frac{x^2}{1-x})^i = \frac{1}{1 - \frac{x^2}{1-x}} = \frac{1 - x}{1 - x - x^2}$.
-
-   2. Derive a recurrence relation satisfied by $a_n$, where $a_n = |S_n|$.
-
-      $\Phi_S(x) = $
+- **Partial Fractions**
 
 
 
+### Graph Theory
 
+- A __graph__ is an ordered pair $(V, E)$ of finite sets $V$ and $E$ such that $E$ (an __edge__) is a set of subsets of $V$ (a __vertex__) of size 2.
 
+- ==__Handshake Lemma__: Let $(V, E)$ be a graph. Then, $\sum\limits_{v \in V} deg(v) = 2|E|$==
 
+  - __Corollary:__ Every graph has an even number of vertices with odd degree.
 
+- Isomorphism
 
+  - Find 1:1 correspondence (bijection!!) between vertices of two graphs to prove isomorphism
+
+- Bipartite Graphs: a graph that can be partitioned evenly into two sets such that every edge has one side in one set and the other in the other set.
+
+- Paths/Cycles
+
+  - A __walk__ is any linear series of vertices all connected (doesn't have to be unique)
+  - A __path__ is a walk with all vertices in it being unique
+  - ==__Lemma^1^__: If every vertex in a graph $G$ has degree at least 2, then $G$ has a cycle.==
+  - Every cycle in a bipartite graph has **even** length.
+
+- Connections: a graph is connected if for any two vertices $x, y$, there is a path from $x$ to $y$.
+
+  - A component of $G$ is a subgraph $C$ of $G$ such that 
+
+    1. $C$ is connected
+
+    2. No subgraph of $G$ that properly contains $C$ is connected
+
+       _basically a component is a subgraph of $G$ that is maximally connected_
+
+- Bridges: an edge $e$ of a graph $G$ is a __bridge__ if $G - e$ has more components than $G$.
+
+  - _basically an edge is a bridge if removing it splits the graph_
+  - An edge is a bridge of a graph _iff_ it is not contained in any cycle of that graph.
+  - If there are two distinct paths from a vertex $u$ to a vertex $v$ in $G$,  then $G$ contains a cycle.
+
+- TIPS:
+
+  - consider vertices at the end of a longest path in a graph
 
 
 

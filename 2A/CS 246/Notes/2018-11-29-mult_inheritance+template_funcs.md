@@ -159,7 +159,7 @@ vector<int> w = v;     // 0, 0, 0, 0
 transform(v.begin(), v.end(), w.begin(), IncreasingPlus{}); // w = 0, 1, 2, 3, 4
 ```
 
-Other methods include `count_if` (returns the number of objects that match the function bool given).
+Other methods include `count_if` (returns the number of objects that match the function bool given), `accumulate` (similar to `foldr` in Racket), and more.
 
 ### Anonymous Functions 
 

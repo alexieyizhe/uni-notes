@@ -35,18 +35,16 @@ If $x \in X$, then any edge $xy \in M$ has $y \in Y$ by rule 2 in the algorithm.
 If $x \in X$, and $xy \not\in M$,  then Rule 2a guarantees $y \in Y$.
 Since all edges with one end in $X$ has the other end in $Y$ and none in $B \setminus Y$, we have shown that there is no edge from a vertex in $X$ to a vertex in $B \setminus Y$. Thus, $Y \cup (A \setminus X)$ is a cover.
 
-Therefore, $|M| = |Y \cup (A \setminus X)|$, and having the same sizes further means that $Y \cup (A \setminus X)$ is a minimum cover, and $M$ is a maximum matching. by theorems proven in previous lectures.
+Therefore, $|M| = |Y \cup (A \setminus X)|​$, and having the same sizes further means that $Y \cup (A \setminus X)​$ is a minimum cover, and $M​$ is a maximum matching. by theorems proven in previous lectures.
 
 This also proves __König's Theorem__ from the previous lecture.
 
 ---
 
-==__Hall's Theorem:__ Let $G$ be a bipartite graph with bipartition $(A, B)$. $G$ has a matching that saturates _all_ of $A$ _iff_ for every $x \subset A$, $|N(x)| \geq |X|$ where $N(x) = \{y \in B \ | \ \text{there is an } x\in X, xy \in E(G)\}$==
+==__Hall's Theorem:__ Let $G$ be a bipartite graph with bipartition $(A, B)$. $G$ has a matching that saturates _all_ of $A$ _iff_ for every subset $X \subset A$, $|N(X)| \geq |X|$ where $N(X) = \{y \in B \ | \ \text{there is an } x\in X, xy \in E(G)\}$ (the set of edges with one end in $X$ and one in $Y$).== 
 
 ==__Corollary:__ A bipartite graph $G$ with bipartition $(A, B)$ has a perfect matching _iff_ $|A| = |B|$ and, for every $Y \subset B, |N(Y)| \geq |Y|$==
 
-==__Corollary:__ A bipartite graph $G$ with bipartition $(A, B)$ has a perfect matching _iff_ for every $X \subset A, |N(x)| \geq |X|$, and for every $Y \subset B, |N(Y)| \geq |Y|$.==
+==__Corollary:__ A bipartite graph $G$ with bipartition $(A, B)$ has a perfect matching _iff_ for every $X \subset A, |N(x)| \geq |X|$, and for every $Y \subset B, |N(Y)| \geq |Y|$ .==
 
 ==__Theorem:__ Let $k$ be a positive integer and $G$ be a $k$-regular bipartite graph. Then, $G$ has a perfect matching.==
-
-m

@@ -1,5 +1,7 @@
 __MATH 239 |__ Oct 17, 2018
 
+#Degrees
+
 ### Handshake Lemma
 
 ==Let $(V, E)$ be a graph. Then, $\sum\limits_{v \in V} deg(v) = 2|E|$==
@@ -30,6 +32,14 @@ Recall that $K_n$ has $n$ vertices and $n \choose 2$ edges. Every vertex has deg
 
 
 
+### Regular Graphs
+
+A graph in which every vertex has degree $k$ is called a $k$-**regular** graph. 
+
+A complete graph is an example of a regular graph, but not every regular graph is a complete graph.
+
+
+
 # Bipartite Graphs
 
 A graph $(V, E)$ is __bipartite__ if $V$ partitions into two sets $X$ and $Y$ such that every edge has one vertex in $X$ and one vertex in $Y$.  
@@ -46,7 +56,7 @@ For positive integers $p, q$ the complete bipartite graph $K_{p, q}$ has $|X| = 
 
 ==__Lemma:__ If $(V, E)$ is a bipartite graph with bipartition $X, Y$, then $\sum\limits_{v \in X} deg(v) = |E| = \sum\limits_{v \in Y} deg (v)$.==
 
-> The proof for this lemma follows from the first bullet point. Note that a __bipartition__ is a partition $X, Y$ 
+> The proof for this lemma follows from the first bullet point. Note that a __bipartition__ is a partition $X, Y$ that separates the vertices into two disjoint sets.
 
 ### Bipartite $Q_n$ Graphs 
 

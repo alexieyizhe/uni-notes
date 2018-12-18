@@ -1,6 +1,6 @@
 __MATH 239 |__  Nov 2, 2018
 
-# Trees (cont.)
+# Trees (pt. 5)
 
 ==__Theorem^2^:__ Kruskal's (or Prim's) Algorithm always outputs a minimum weight spanning tree.==
 
@@ -29,9 +29,25 @@ By induction, we can show $T = S_{n - 1}$ is a minimum weight spanning tree.
 
 ---
 
+__Proof of Prim's__
+Let $T_1, ..., T_n$ be trees where $T_{k + 1}$ is the tree created by adding the edge $e_k$ to $T_k$.
 
+We will prove by induction that there exists a MST containing $T_i$ as a subgraph, which means that $T_i$ must be the MST, otherwise that MST is not a MST.
 
- 
+_Base case:_ For $i = 1$, $T_1$ is a subgraph of every MST, so this is true.
 
- 
+_Inductive hypothesis:_ Assume that there exists a MST containing $T_i$ as a subgraph.
+
+ _Inductive step:_ Prove that there is a MST containing $T_{i + 1}$ as a subgraph.
+Let $T^*$ be a MST that contains $T_i$ as a subgraph, which is assumed by the inductive hypothesis. 
+
+If $T^*$ also contains $e_i$, then it contains $T_{i + 1}$ and we are done.
+
+If $T^*$ does not contain $e_i$, then $T^* + e_i$ contains a single cycle $C$, since $T^*$ is a spanning tree. $C - e_i$ is a path between vertices $u, v$, where $u \in T_i$ and $v \not\in T_i$, since $e_i$ is not in $T_i$. So, there is an edge $e'$ in $C - e_i$ that has one end in $V(T_i)$ and the other not (that is, that $e'$ is not in $T_i$). By a previous theorem, $T' =T^* + e_i -e' $ is also a spanning tree. 
+
+If the weight of $e_i$, the edge added to $T_i$ to get $T_{i + 1}$, is larger than the weight of $e'$, then $w(T') \lt w(T^*)$, which contradicts the fact that $T^*$ is a MST. As well, the weight of $e_i$ cannot be larger than the weight of $e'$ because in that case we would've picked $e'$ instead of $e_i$ when using Prim's Algorithm. So, the weight of $e_i$ is the same as the weight of $e'$, which means that $w(T') = w(T^*)$, which means $T'$ is a MST that contains all the edges in $T_{i + 1}$, which menas that $T_{i + 1}$ is a subgraph of a MST $T'$. 
+
+So, by induction, for each $n$, there is a MST that contains $T_n$, which means $T_n$ must be that MST, and so the algorithm always produces a MST.      ==$QED.$==
+
+---
 

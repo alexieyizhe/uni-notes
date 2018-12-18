@@ -1,12 +1,16 @@
 __MATH 239 |__ Oct 31, 2018 :ghost:
 
-# Trees (cont.)
+# Trees (pt. 4)
 
 A __spanning tree__ $T$ of a graph $G$ is a subgraph of $G$ that is a tree where $V(T) = V(G)$. It's a subgraph that has the same vertices but possibly less edges.
 
-==__Theorem^1^:__ If $G$ is a connected graph such that every cycle in $G$ has even length, then $G$ is bipartite.==
+==__Lemma:__ An odd cycle is not bipartite.==
 
-> The way we approach proving this is by showing if a cycle in $G$ has odd length, it's connecting two vertices in the same set in a bipartition (_i.e. if you jump back and forth between the two sets (moving between vertices), jumping an even number of times gives you two vertices in the same partition, so they are the same colour and thus the graph cannot be bipartite)._)
+> We show this by defining a vertex set, picking the 'middle' vertex, and going 'outwards' by 1 each time to find two vertices that must be in the same partition.. Once you reach the very 'outside', you find two vertices in the same partition which are adjacent, which contradicts the fact that it is bipartite.
+
+==__Theorem^1^:__ A graph is bipartite _iff_ it has no odd cycles.==
+
+> Proof of this is using the lemma and contradiction.
 
 ---
 
@@ -23,9 +27,9 @@ Either:
 > In homework, we showed: if $G$ is a bipartite graph with $n$ vertices, then $|E(G)| \leq (\frac{n}{2})^2$.
 > A harder version: if $G$ is a graph with no cycle of length 3, then $|E(G)| \leq (\frac{n}{2})^2$ (leads to Turan's Theorem).
 
+### Minimum Weight Spanning Trees
 
-
-Consider a graph with numbers corresponding to edges. Find a spanning tree that minimizes the sum of the numbers on its edges. These are called __minimum weight spanning trees.__ 
+Consider a graph with numbers corresponding to edges. Find a spanning tree that minimizes the sum of the numbers on its edges. These are called __minimum weight spanning trees.__, or __minimum spanning trees__.
 
 There are two main algorithms for _finding these minimum trees:_
 
@@ -34,16 +38,17 @@ There are two main algorithms for _finding these minimum trees:_
 | Builds up with trees always                                  | Builds up without ever introducing a cycle                   |
 | Starting at a vertex, pick one of the cheapest edges having one end in the tree and one end not in the tree | Given the components of what we have, pick a cheapest edge in the graph that has ends in different componenets of our current graph |
 
----
+### Algorithm Steps
 
-__Proof of Kruskal's Algorithm__
-Let $T$ be a tree constructed by Kruskal's Algorithm, having picked the edges $e_1, e_2, ...,e_k$ in this order. Let $S$ be a least weight spanning tree.
+__Prim's__
 
-We _claim_ that there is a minimum weight spanning tree $S_1$ containing $e_1$. 
+1. Let $v$ be any vertex in $G$. Let $T$ be the tree consisting of just $v$. 
+2. Pick an edge having one vertex in $T$ and another not in $T$ that has the smallest weight. Add it to $T$. 
+3. Repeat with the tree $T$ growing each time, until you reach a point where there are no more edges not in $T$ , and $T$ is now a minimum spanning tree of $G$.
 
----
+__Kruskal's__
 
-
-
-
+1. Sort the edges of $G$ into a list from least weight to most weight.
+2. Going up the sorted list, pick the edge with the least weight and add it to $T$, as long as the edge does not form a cycle.
+3. Repeat with the tree $T$ growing each time, until you have no more edges that are not in $T$ or will form a cycle if added to $T$, and now $T$ is a minimum spanning tree of $G$. 
 

@@ -28,6 +28,8 @@ Since it's an even number, we amend the Theorem^1^ above to fit:
 
 
 
+# Non-Planar Graphs
+
 #### Kuratowski's Theorem (1930)
 
 ==A graph $G$ is __not__ planar _iff_ it contains a __subdivision__ of either $K_5$ or $K_{3,3}$.==

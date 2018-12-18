@@ -1,35 +1,5 @@
 __MATH 239 |__  Nov 5/7, 2018
 
-# Coloring Graphs
-
-We colour the vertices such that adjacent vertices get different colours.
-
-__Some Facts:__ 
-
-1. A graph can be coloured with 2 colours _iff_ it is bipartite.
-2. A graph can be coloured with 1 colour _iff_ it has no edges.
-3. An odd cycle needs 3 colours.
-4. A complete graph with $n$ vertices ($K_n$) needs $n$ colours.
-
-==__Theorem^2^:__ Let $G$ be a graph and let $\triangle(G)$ denote the largest degree of any vertex in $G$. Then $G$ can be coloured with $\triangle(G) + 1$ colours.==
-
-------
-
-__Proof of Theorem^2^__
-We proceed by induction on $|V(G)|$.
-
-_Base Case:_ $|V(G)| = 1$
-In this case, $\triangle(G) = 0$ and $G$ can indeed be coloured with 1 colour.
-
-If $|V(G)| > 1$, let $v$ be any vertex of $G$ and let $H = G - v$. Then $\triangle(H) \leq \triangle(G)$ and by induction, $H$ can be coloured with $\triangle(H) + 1$ colours.
-The vertex $v$ has $\leq \triangle(G)$ neightbours in $H$, so those neighbours are coloured with at $\leq \triangle(G)$ colours.  Thus, at least 1 colour out of the $\triangle(G) + 1$ colours is available to colour $v$ a colour that is different from its neighbours. QED.
-
-------
-
-Eventually, we'll prove that every _planar graph_ can be properly coloured with $5$ colours.
-
-
-
 # Planar Graphs
 
 A __planar graph__ is a graph that can be represented in a single plane without two edges of the graph ever intersecting.
@@ -56,9 +26,9 @@ __Faces__ are enclosed regions defined by the edges and vertices of a planar gra
 __Proof of Euler's Formula for Connected Graphs__
 We let $T$ be a spanning tree in $G$ (a connected graph embedded in the plane). Then the embedding of $G$ yields an embedding of $T$: erase the edges of $G$ in $T$.
 
-_Base case:_ Since $T$ has one face, and $|V(G)| - |E(T)| = 1$, we have $|V(T)| - |E(T)| + |Faces(G)| = 1 + 1 = 2$, yielding the formula as required.
+_Base case:_ Since $T$ has one face, and $|V(T)| - |E(T)| = 1$, we have $|V(T)| - |E(T)| + |Faces(G)| = 1 + 1 = 2$, yielding the formula as required.
 
-For the inductive step, let $e$ be an edge of $G$ not in $T$. Since $T$ is a spanning tree of $G$ and $e$ is not in $T$, then $G - e$ is connected since $T$ is still completely in $G - e$. By the induction, $|V(G - e)| - |E(G - e)| + |Faces(G - e)| = 2$.
+For the inductive step, let $e$ be an edge of $G$ not in $T$. Since $T$ is a spanning tree of $G$ and $e$ is not in $T$, then $G - e$ is connected since $T$ is still completely in $G - e$. By the induction, we need to prove that $|V(G - e)| - |E(G - e)| + |Faces(G - e)| = 2$.
 
 We know $|V(G - e)| = |V(G)|$, and $|E(G - e)| = |E(G)| - 1$. How do we show that $|Faces(G - e)| = |Faces(G)| - 1$?
 
@@ -68,15 +38,21 @@ So, since $e$ is not in the spanning tree $T$ there is a path $P$ in $T$ that co
 
 Therefore, $2 = |V(G - e)| - |E(G - e)| + |Faces(G - e)| = |V(G)| - (|E(G) - 1) + (|Faces(G)| - 1) = |V(G)| - |E(G)| + |F(G)|$
 
+We apply this inductively for every edge $e$ in $G$ not in $T$, to get the result for $G$ of Euler's Theorem.
+
 _QED_
 
 ---
 
+### Platonic Solids
+
+A **platonic solid** is just a shape where there exists a planar embedding where all vertices have the same degree $d \geq 3$ and all faces have the same degree $d^* \geq 3$.
+
 ==__Platonic Solids Theorem:__ Let $G$ be a connected $d$-regular graph embedded in the plane so that every face has degree $d^*$. If $d \geq 3, d^* \geq 3$, then $(d, d^*)$ is one of $(3, 3), (3, 4), (3, 5), (4, 3), (5, 3)$.==
 
-![Image result for regular planar graphs](https://faculty.etsu.edu/gardnerr/5025/platonic/platonic1.bmp)
+There are exactly 5 platonic graphs.
 
-_examples of planar embeddings of regular graphs_
+![image-20181217173732528](/Users/alexieyizhe/Google Drive/University/2A/MATH 239/Notes/2018-11-05-7-planar_graphs.assets/image-20181217173732528-5086252.png)
 
 ---
 

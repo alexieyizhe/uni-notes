@@ -2,13 +2,37 @@ __MATH 239 |__ Nov 16, 2018
 
 # Graph Colouring
 
+We colour the vertices such that adjacent vertices get different colours.
+
+__Some Facts:__ 
+
+1. A graph can be coloured with 2 colours _iff_ it is bipartite.
+2. A graph can be coloured with 1 colour _iff_ it has no edges.
+3. An odd cycle needs 3 colours.
+4. A complete graph with $n$ vertices ($K_n$) needs $n$ colours.
+
+==__Theorem^2^:__ Let $G$ be a graph and let $\triangle(G)$ denote the largest degree of any vertex in $G$. Then $G$ can be coloured with $\triangle(G) + 1$ colours.==
+
+------
+
+__Proof of Theorem^2^__
+We proceed by induction on $|V(G)|$.
+
+_Base Case:_ $|V(G)| = 1$
+In this case, $\triangle(G) = 0$ and $G$ can indeed be coloured with 1 colour.
+
+If $|V(G)| > 1$, let $v$ be any vertex of $G$ and let $H = G - v$. Then $\triangle(H) \leq \triangle(G)$ and by induction, $H$ can be coloured with $\triangle(H) + 1$ colours.
+The vertex $v$ has $\leq \triangle(G)$ neighbours in $H$, so those neighbours are coloured with at $\leq \triangle(G)$ colours.  Thus, at least 1 colour out of the $\triangle(G) + 1$ colours is available to colour $v$ a colour that is different from its neighbours. QED.
+
+------
+
+Eventually, we'll prove that every _planar graph_ can be properly coloured with 6 colours, and then 5..
+
 ### Four Colour Theorem
 
 ==Every planar graph has a 4-colouring.== 
 
 First, we'll prove the __six colour theorem:__ every planar graph has a 6-colouring.
-
-
 
 A __colouring__ of a graph with colour set $C$ is a function $f: V(G) \rightarrow C$ such that, if $uv \in E(G), f(u) \not= f(v)$.
 
@@ -40,7 +64,10 @@ Suppose the result holds for all planar graph with $k​$ vertices. Let $G​$ b
 __Proof of the 5 Colour Theorem__
 If $G$ has a vertex $v$ with degree $\leq 4$, proceed exactly as in the proof of the 6 Colour Theorem, turning any occurrence of $6$ into $5$. 
 
-Otherwise, $G$ does not have all vertices adjacent to each other, since that would create a subdivision of $K_5$ and would make $G$ not planar. So, we colour the two vertices that are not adjacent to each other with the same colour.
+Otherwise, $G$ has a vertex $x$ with degree 5, and the vertices connected to that vertex must not all be adjacent to each other, since that would create a subdivision of $K_5$ and would make $G$ not planar (a contradiction).
 
+An ==__edge contraction__== $G /e$ of an edge $e$ in a graph $G$ is the graph obtained by reducing the length of $e$ to 0 and allowing the two vertices connected by $e$ to become one vertex, and any vertex that was adjacent to either one or both of the vertices connected to $e$ are connected with the new single vertex.
 
+So, there are two vertices $u,v​$ not adjacent to each other. We edge contract both of these vertices' edges with the vertex with degree 5, so that we have one less vertex. By the inductive hypothesis, we have a graph that is 5-colourable. However, instead of colouring both $u, v​$ different colours, colour them the same colour. 
 
+Now, 2 of the 5 vertices connected to $x$ have the same colour, and so there are 4 colours in the vertices connected to $x$. Colour $x$ the remaining colour out of the 5 we're using to colour the graph, and now we have a 5-colouring of $G$. 

@@ -40,7 +40,7 @@ Therefore, $2 = |V(G - e)| - |E(G - e)| + |Faces(G - e)| = |V(G)| - (|E(G) - 1) 
 
 We apply this inductively for every edge $e$ in $G$ not in $T$, to get the result for $G$ of Euler's Theorem.
 
-_QED_
+==$QED.$== 
 
 ---
 

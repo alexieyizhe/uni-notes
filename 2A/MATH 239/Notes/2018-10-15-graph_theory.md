@@ -32,11 +32,12 @@ The graphs $(V, E)$ and $(W, F)$ are __isomorphic__ if there is a bijection $\Ph
   - It has as many vertices as you wish, but _no edges_
 - The __complete graph__ is a graph in which the set of edges $E$ is _all_ the 2-element subsets of $V$
   - For a complete graph with $n$ vertices, it has ${n \choose 2}$ edges
+  - A complete graph with $n$ vertices is denoted $K_n$
 - A __path__ $P_n$ is a linear graph with the following form:
-  - $P_n = (\{0, 1, ..., n\}, \{\{i - 1, i\} \ |\ i = 1 , ... , n\})$
+  - $P_n = (\{0, 1, ..., n\}, \{\{i - 1, i\} \ |\ i = 1 , ... , n\})​$
 - A __cycle__ $C_n$ is a cyclic graph with the following form:
   - $C_n = (\{0, 1, ..., n - 1\}, \{\{i - 1, i\} \ |\ i = 1 , ... , n - 1\})$ (modulo $n$) 
--  An __n-th dimensional cube__ $Q_n$ has as vertices all binary strings of length $n$ and two vertices are adjacent precisely when their strings differ in exactly one coordinate. 
+- An __n-th dimensional cube__ $Q_n$ has as vertices all binary strings of length $n$ and two vertices are adjacent precisely when their strings differ in exactly one coordinate. 
   - $Q_0$:  $\bullet$
   - $Q_1$:  $\bullet -\bullet$
   - $Q_2$:  square lol

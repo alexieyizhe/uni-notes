@@ -59,7 +59,7 @@ A __cover__ is a set $C$ of vertices in a graph $G$ such that every *edge* of $G
 __Proof of Theorem^1^__
 Let $N$ be a matching such that $|N| \gt |M| $. Let $H$ be the subgraph of $G$ with edge set $M + N = (M \setminus N) \cup (N \setminus M)$ (_a subgraph consisting of edges that are in exactly one of $M$ or $N$_.
 
-Every component of $H$ is either a path or a cycle (since connected & all vertices have degree 1 or 2). Since $|N| \gt |M|$, some component of $H$ has more edges in $N$. Since cycles must alternate between $M$-edges and $N$-edges (so no two from each set are adjacent to each other), they have even length and must have the same number of edges in $N$ as $M$. 
+All vertices in $H$ have degree 1 or 2, since every edge connected to a vertex is either shared between $M$ and $N$ (1 edge) or different (2 edges). Every component of $H$ is either a path or a cycle (since connected & all vertices have degree 1 or 2). Since $|N| \gt |M|$, some component of $H$ has more edges in $N$. Since cycles must alternate between $M$-edges and $N$-edges (so no two from each set are adjacent to each other), they have even length and must have the same number of edges in $N$ as $M$. 
 
 So, if the component has more edges in $N$, it can only be a _path_. It must alternate between edges in $M$ and edges in $N$, since otherwise that would contradict the definition of a matching. Since there are more edges in $N$ in this component than $M$, it must have odd length, and so the path must start and end with an edge in $N$ (thus not in $M$) and alternate in between, making the path an $M$-augmenting path in $G$.
 

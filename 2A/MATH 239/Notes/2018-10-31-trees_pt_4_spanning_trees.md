@@ -10,7 +10,7 @@ A __spanning tree__ $T$ of a graph $G$ is a subgraph of $G$ that is a tree where
 
 ==__Theorem^1^:__ A graph is bipartite _iff_ it has no odd cycles.==
 
-> Proof of this is using the lemma and contradiction.
+> Proof of this done through using the lemma above and contradiction.
 
 ---
 

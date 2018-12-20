@@ -34,7 +34,7 @@ Recall that $K_n$ has $n$ vertices and $n \choose 2$ edges. Every vertex has deg
 
 ### Regular Graphs
 
-A graph in which every vertex has degree $k$ is called a $k$-**regular** graph. 
+A graph in which every vertex has degree $k$ is called a $k$-**regular** graph.
 
 A complete graph is an example of a regular graph, but not every regular graph is a complete graph.
 

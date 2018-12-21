@@ -270,43 +270,43 @@ __ MATH 239 |__ Final
 
 - [ ] counting how many binary strings satisfy a certain requirement
 
-- [x] combinatorial proofs
+- [ ] combinatorial proofs
 
-  - [x] finding bijections
+  - [ ] finding bijections
 
-  - [x] finding two ways to count things
+  - [ ] finding two ways to count things
 
     ![image-20181218214744618](/Users/alexieyizhe/Google Drive/University/2A/MATH 239/Notes/review-final_exam.assets/image-20181218214744618-5187664.png)
 
     ![image-20181218214759463](/Users/alexieyizhe/Google Drive/University/2A/MATH 239/Notes/review-final_exam.assets/image-20181218214759463-5187679.png)
 
-- [x] finding generating series from 
+- [ ] finding generating series from 
 
-  - [x] descriptions of sets
+  - [ ] descriptions of sets
 
     $\Phi_S(x) = \sum\limits_{\sigma \in S}x^{w(\sigma)}$ where $w$ is the weight function
 
-  - [x] compositions
+  - [ ] compositions
 
     - $w$ is the sum of all the parts ($w(c_1, c_2, ..., c_k) = w(c_1) + w(c_2) + ... + w(c_k)$)
 
-  - [x] binary strings
+  - [ ] binary strings
 
-- [x] formal power series
+- [ ] formal power series
 
-  - [x] inverses
+  - [ ] inverses
 
     ![image-20181218215551474](/Users/alexieyizhe/Google Drive/University/2A/MATH 239/Notes/review-final_exam.assets/image-20181218215551474-5188151.png)
 
-  - [x] finding coefficients of rational functions/generating series
+  - [ ] finding coefficients of rational functions/generating series
 
-- [x] finding amounts of compositions
+- [ ] finding amounts of compositions
 
-- [x] definitions of important theorems
+- [ ] definitions of important theorems
 
   - [ ] sum and product lemma
 
-- [x] binary strings
+- [ ] binary strings
 
   - [ ] determine if they are ambiguous
   - [ ] finding unambiguous decompositions
@@ -320,16 +320,17 @@ __ MATH 239 |__ Final
           is a recursive unambiguous decomp for $L$
         - can convert this to generating series and solve 2 equations 2 unknowns for $\Phi_M(x)$, then sub in to solve for $\Phi_L(x)$ 
 
-- [x] finding closed form formula for a coefficient of a generating series
+- [ ] finding closed form formula for a coefficient of a generating series
 
   - [ ] finding recurrence relations
   - [ ] finding closed form formulas
 
-- [x] drawing graphs
+- [ ] drawing graphs
+
   - [ ] finding isomorphisms: find vertices with distinct characteristics and use those
 - [ ] finding minimum weight spanning tree using Prim's or Kruskal's
 - [ ] prove a graph is planar or non-planar (draw planar embedding _or_ use Kuratowski's Theorem)
-- [x] finding maximum matching/minimum cover using bipartite matching algorithm
+- [ ] finding maximum matching/minimum cover using bipartite matching algorithm
 - [ ] drawing planar duals
 
 

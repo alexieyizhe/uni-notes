@@ -1,4 +1,4 @@
-__poinSTAT 231 | __Section 6.3
+__STAT 231 | __Section 6.3
 
 # Comparing Means of Two Populations
 

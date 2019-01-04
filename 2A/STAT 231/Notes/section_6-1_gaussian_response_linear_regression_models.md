@@ -8,7 +8,7 @@ Formally:
 
 ![image-20181210231926047](/Users/alexieyizhe/Google Drive/University/2A/STAT 231/Notes/section_6-1.assets/image-20181210231926047-4501966.png)
 
-Most of the time, we'll make $\sigma(x_i) = \sigma$ a constant, which makes the models easier to analyze. So, the value of $\mu(x)$ is determinede by the function itself and the covariates $x$.
+Most of the time, we'll make $\sigma(x_i) = \sigma​$ a constant, which makes the models easier to analyze. So, the value of $\mu(x)​$ is determined by the function itself and the covariates $x​$.
 
 
 

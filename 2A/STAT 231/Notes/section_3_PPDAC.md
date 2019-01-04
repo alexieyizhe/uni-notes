@@ -54,3 +54,5 @@ The steps of this algorithm are:
 
 10. What type of **numerical summary** is `some number they mentioned`?
 
+
+

@@ -4,25 +4,25 @@ __STAT 231 |__ Final Study Guide
 
 ### 1. Review Notes
 
-- [x] Empirical Studies (Sections ==1.1, 1.2==)
-- [x] Numerical Summaries (Section ==1.3==)
-- [x] Graphical Summaries (Section ==1.3==)
-- [x] Data Analysis and Statistical Models (Sections ==1.4, 1.5, 2.1==)
-- [x] Check the Fit of a Model (Section ==2.6==)
-- [x] PPDAC (Chapter ==3==)
-- [x] Estimation and Sampling Distributions (Sections ==4.1, 4.2==)
-- [x] Likelihood Intervals (Section ==4.3==)
-- [x] Confidence Intervals (Section ==4.4==)
-- [x] Chi-squared and $t$ Distributions (Section ==4.5==)
-- [x] Likelihood-based confidence intervals (Section ==4.6==)
-- [x] Confidence Intervals for Parameters in the $G(\mu, \sigma)$ model (Section ==4.8==)
-- [x] Hypothesis testing (Section ==5.1==)
-- [x] Hypothesis testing for Parameters in the $G(\mu, \sigma)$ model (section ==5.2==)
-- [x] Likelihood ratio tests (Section ==5.3==)
-- [x] Gaussian Response Models (Sections ==6.1, 6.2==)
-- [x] Comparing Means of Two Populations (Section ==6.3==)
-- [x] Multinomial Models (Chapter ==7==)
-- [x] Cause and Effect (Chapter ==8==)
+- [ ] Empirical Studies (Sections ==1.1, 1.2==)
+- [ ] Numerical Summaries (Section ==1.3==)
+- [ ] Graphical Summaries (Section ==1.3==)
+- [ ] Data Analysis and Statistical Models (Sections ==1.4, 1.5, 2.1==)
+- [ ] Check the Fit of a Model (Section ==2.6==)
+- [ ] PPDAC (Chapter ==3==)
+- [ ] Estimation and Sampling Distributions (Sections ==4.1, 4.2==)
+- [ ] Likelihood Intervals (Section ==4.3==)
+- [ ] Confidence Intervals (Section ==4.4==)
+- [ ] Chi-squared and $t$ Distributions (Section ==4.5==)
+- [ ] Likelihood-based confidence intervals (Section ==4.6==)
+- [ ] Confidence Intervals for Parameters in the $G(\mu, \sigma)$ model (Section ==4.8==)
+- [ ] Hypothesis testing (Section ==5.1==)
+- [ ] Hypothesis testing for Parameters in the $G(\mu, \sigma)$ model (section ==5.2==)
+- [ ] Likelihood ratio tests (Section ==5.3==)
+- [ ] Gaussian Response Models (Sections ==6.1, 6.2==)
+- [ ] Comparing Means of Two Populations (Section ==6.3==)
+- [ ] Multinomial Models (Chapter ==7==)
+- [ ] Cause and Effect (Chapter ==8==)
 
 
 
@@ -82,7 +82,7 @@ __STAT 231 |__ Final Study Guide
 
 ### 3. Create Cheat Sheet
 
-- [x] Helpful `R` functions
+- [ ] Helpful `R` functions
 
   `pnorm(y, mu, sigma)`: gives us the $P(Y \leq y)$ where $Y \sim G(mu, sigma)$. `mu` and `sigma` default to 0, 1.
 
@@ -96,15 +96,15 @@ __STAT 231 |__ Final Study Guide
 
   `qchisq(w, df)`: gives us $a$ where $P(W \leq w) = a$ and $W \sim \chi^2_{df}$. There is no default value for `df`.
 
-- [x] def'n of **variate**, types of variates, **attribute** ==Low==
+- [ ] def'n of **variate**, types of variates, **attribute** ==Low==
 
-- [x] 3 types of **studies, statistical inference** ==Low==
+- [ ] 3 types of **studies, statistical inference** ==Low==
 
-- [x] **kurtosis** and **skewness** and what each means graphically ==Low==
+- [ ] **kurtosis** and **skewness** and what each means graphically ==Low==
 
-- [x] meaning of 5 number summary ==Low==
+- [ ] meaning of 5 number summary ==Low==
 
-- [x] signs that data is Gaussian/normal `Medium`
+- [ ] signs that data is Gaussian/normal `Medium`
 
   - mean = median
   - skewness close to 0
@@ -117,37 +117,37 @@ __STAT 231 |__ Final Study Guide
   - QQ plot is linear
   - relative frequency histogram is bell shaped
 
-- [x] how to find expected frequencies `Medium`
+- [ ] how to find expected frequencies `Medium`
 
-- [x] meaning of **boxplot, QQ plots** `HIGH`
+- [ ] meaning of **boxplot, QQ plots** `HIGH`
 
-- [x] sample correlation ==Low==
+- [ ] sample correlation ==Low==
 
 - [ ] invariance property (space permitting) ==Low==
 
-- [x] checking fit of model (2.6) `Medium`
+- [ ] checking fit of model (2.6) `Medium`
 
-- [x] steps of PPDAC, where error can occur, def'n of sampling protocol (3.0) `Medium`
+- [ ] steps of PPDAC, where error can occur, def'n of sampling protocol (3.0) `Medium`
 
-- [x] relationship between properties and confidence interval width (4.4) ==Low==
+- [ ] relationship between properties and confidence interval width (4.4) ==Low==
 
-- [x] steps to find confidence interval using pivotal quantity (4.4) `Medium`
+- [ ] steps to find confidence interval using pivotal quantity (4.4) `Medium`
 
-- [x] how to find approximations of pivotal quantities `Medium`
+- [ ] how to find approximations of pivotal quantities `Medium`
 
   - take the central limit theorem equation of the distribution, sub in estimators in place of parameters
 
-- [x] Central Limit Theorem `Medium`
+- [ ] Central Limit Theorem `Medium`
 
-- [x] distributions and their: maximum likelihood, variance, mean, standard deviation `HIGH`
+- [ ] distributions and their: maximum likelihood, variance, mean, standard deviation `HIGH`
 
-- [x] sample size calculation (space permitting) ==Low==
+- [ ] sample size calculation (space permitting) ==Low==
 
-- [x] properties of chi-squared (4.5) `Medium`
+- [ ] properties of chi-squared (4.5) `Medium`
 
-- [x] converting between likelihood and confidence interval `HIGH`
+- [ ] converting between likelihood and confidence interval `HIGH`
 
-- [x] 15% likelihood interval is an approximate 95% confidence interval and a 10% likelihood interval is an approximate 97% confidence interval (NOTE IT IS APPROXIMATE **NOT** EXACT) ==Low==
+- [ ] 15% likelihood interval is an approximate 95% confidence interval and a 10% likelihood interval is an approximate 97% confidence interval (NOTE IT IS APPROXIMATE **NOT** EXACT) ==Low==
 
 - [ ] maximum likelihood statistic, how $\Lambda \sim \chi^2_1$ for large $n$ makes it a pivotal quantity `Medium`
 
@@ -160,7 +160,7 @@ __STAT 231 |__ Final Study Guide
 
 - [ ] point estimator $S^2$ for $\sigma^2$ (4.6) `Medium`
 
-- [x] hypothesis testing recipe (5.1) `HIGH`
+- [ ] hypothesis testing recipe (5.1) `HIGH`
 
 - [ ] hypothesis testing for Gaussian parameters `HIGH`
 

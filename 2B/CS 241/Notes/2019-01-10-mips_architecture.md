@@ -73,7 +73,7 @@ We will work with __MIPS__, an architecture that consists of the following:
 
       When the program terminates, the PC is set back to the next instruction of the ==Loader== and it is responsible for loading another program. Register 32 (`$31`) holds the address of the next instruction of the ==Loader==, so we set the PC to the contents of `$31`.
 
-      :warning: __Make sure that you are careful when you manipulate `$31` or recurse; make sure to always save the previous value of PC somewhere!__
+      :warning: __Make sure that you are careful when you manipulate `$31` or use recursion; make sure to always save the previous value of PC somewhere!__
 
 - **Random Access Memory (RAM)**: A large amount of memory separate from the CPU
 

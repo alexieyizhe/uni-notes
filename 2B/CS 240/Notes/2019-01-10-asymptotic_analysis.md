@@ -6,15 +6,13 @@ __CS 240 |__ January 10, 2019
 
 - $g(n)$ is a upper bound on growth rate (as inputs get bigger and bigger, what _type_ of growth is there)
 
-- $f(n)$ grows no faster than $g(n)$
+- $f(n)$ grows no faster than $g(n)​$
 
-- $f(n) \leq c * g(n), \ \forall n \geq n_o$ where $c \gt 0, n_n \gt 0$
+- $f(n) \leq c * g(n), \ \forall n \geq n_o​$ where $c \gt 0, n_n \gt 0​$
 
-  - A key observation is that this is not $\forall \ n \in \N$ - sometimes, $f(n) \geq g(n)$ for small $n$ until larger $n$:
+  - A key observation is that this is not $\forall \ n \in \N​$ - sometimes, $f(n) \geq g(n)​$ for small $n​$ until it changes for larger $n​$:
 
-
-
-    ![Image result for big o graph](../../../../../Google%20Drive/University/2B/CS%20240/Notes/assets/Rt5wO.gif)
+![Image result for big o graph](./assets/Rt5wO.gif)
 
 Showing that $f(n)$ is $O(g(n))$ __from first principles__ means to _use the definition and find $c$, $n_o$._ Make sure you're deriving them from the formula, not arbitrary trial and error.
 
@@ -83,12 +81,12 @@ We want a __tight asymptotic bound.__ This leads us to develop two more sets of 
 
 > __Ex. Show that $\frac{1}{2}n^2 - 5n \in \Omega(n^2)$.__
 >
-> We need to show that $\frac{1}{2}n^2 - 5n \geq c * n^2, \forall n \geq n_o$ for $c, n_o \gt 0$.
-> Find $c \lt \frac{1}{2}$ (the leading term of $f(n)$), and $n_o \gt 10$ (to ensure that $f(n)\gt 0$).
+> We need to show that $\frac{1}{2}n^2 - 5n \geq c * n^2, \forall n \geq n_o​$ for $c, n_o \gt 0​$.
+> Find $c \lt \frac{1}{2}​$ (the leading term of $f(n)​$), and $n_o \gt 10​$ (to ensure that $f(n)\gt 0​$).
 >
-> Choose $c = \frac{1}{4}$. Then, $\frac{1}{2}n^2 - 5n = \frac{1}{4} n^2 + \frac{1}{4}n^2 - 5n \geq \frac{1}{4}n^2$. 
+> Choose $c = \frac{1}{4}$. Then, we need $\frac{1}{2}n^2 - 5n = \frac{1}{4} n^2 + \frac{1}{4}n^2 - 5n \geq \frac{1}{4}n^2$. 
 >
-> Now, observe:
+> Now, subtract $\frac{1}{4}n^2$ from both sides to get:
 > $\frac{1}{4}n^2 - 5n \geq 0$
 > $\frac{1}{4}n \geq 5$
 > $n \geq 20$
@@ -119,10 +117,12 @@ To show strict inequality, we need to introduce two new notations:
 >
 > We need to show that $\forall c \gt 0, \exists \ n_o \gt 0$ such that $2019n^2 + 1388n \lt c *n^3$.
 >
-> _Case 1:_ $0 \lt c \lt 1$
+> _Note that $0 \lt c \lt 1$ can be possible_
 > $2019n^2 + 1388n \lt 5000n^2,  \forall \ n \geq 1$
 > $2019n^2 + 1388n \leq \frac{5000}{n} * n * n^2,  \forall \ n \geq 1$
 > We need $\frac{5000}{n} \leq c$ to find a valid $c$, so just rearrange and for any $c$, choose $n_o = \frac{5000}{c}$.
+
+__Little-o is stronger than Big-O - that is, that when you have a function $\in o(something)$, it's also $\in O(something)$ as well.__
 
 #### $\omega$-notation
 

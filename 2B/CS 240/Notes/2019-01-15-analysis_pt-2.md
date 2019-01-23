@@ -1,4 +1,4 @@
-__CS 240 | __ January 15, 2019
+__                                                                                                                                                                                                                                                                           CS 240 | __ January 15, 2019
 
 #Order Notation (cont)
 

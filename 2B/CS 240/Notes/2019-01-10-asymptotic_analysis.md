@@ -67,22 +67,23 @@ We want a __tight asymptotic bound.__ This leads us to develop two more sets of 
 - $f$ and $g$ are switched compared to Big-O Notation
 - "grows no slower than"
 - asymptotic _lower_ bound
+- If $f(n) \in \Omega(g(n))​$, then $f(n) \geq c * g(n), \ \forall n \geq n_o​$ where $c \gt 0, n_n \gt 0​$
 
 > __Ex. Show that $n^3 log \  n \in \Omega(n^3)$.__
 >
 > Observe:
-> $n^3 log \  n \geq c * n^3$, $\forall n \geq n_o$.
-> Let $c = 1, n_o = 2$ to achieve the desired result.
+> $n^3 log \  n \geq c * n^3​$, $\forall n \geq n_o​$.
+> Let $c = 1, n_o = 2​$ to achieve the desired result.
 
 > __Ex. Show that $2n^2 + 3n + 11 \geq c * n^2$.__
 >
 > Let $c = 2$. Then:
 > $2n^2 + 3n + 11 \geq 2n^2, \forall n \geq 1 = n_o $.
 
-> __Ex. Show that $\frac{1}{2}n^2 - 5n \in \Omega(n^2)$.__
+> __Ex. Show that $\frac{1}{2}n^2 - 5n \in \Omega(n^2)​$.__
 >
-> We need to show that $\frac{1}{2}n^2 - 5n \geq c * n^2, \forall n \geq n_o​$ for $c, n_o \gt 0​$.
-> Find $c \lt \frac{1}{2}​$ (the leading term of $f(n)​$), and $n_o \gt 10​$ (to ensure that $f(n)\gt 0​$).
+> We need to show that $\frac{1}{2}n^2 - 5n \geq c * n^2, \forall n \geq n_o$ for $c, n_o \gt 0$.
+> Find $c \lt \frac{1}{2}$ (the leading term of $f(n)$), and $n_o \gt 10$ (to ensure that $f(n)\gt 0$).
 >
 > Choose $c = \frac{1}{4}$. Then, we need $\frac{1}{2}n^2 - 5n = \frac{1}{4} n^2 + \frac{1}{4}n^2 - 5n \geq \frac{1}{4}n^2$. 
 >
@@ -107,7 +108,7 @@ To show strict inequality, we need to introduce two new notations:
 
 #### $o$-notation
 
-==__Formal Definition:__== $f(n) \in o(g(n))$ if for __all__ constants $c \gt 0$, there exists a constant $n_o \gt 0$ such that $|f(n)| \lt c |g(n)|$ for all $n \geq n_o$.
+==__Formal Definition:__== $f(n) \in o(g(n))​$ if for __all__ constants $c \gt 0​$, there exists a constant $n_o \gt 0​$ such that $|f(n)| \lt c |g(n)|​$ for all $n \geq n_o​$.
 
 - $f$ dominated by $g$
 - $f(n)$ grows slower than $g(n)$
@@ -122,11 +123,11 @@ To show strict inequality, we need to introduce two new notations:
 > $2019n^2 + 1388n \leq \frac{5000}{n} * n * n^2,  \forall \ n \geq 1$
 > We need $\frac{5000}{n} \leq c$ to find a valid $c$, so just rearrange and for any $c$, choose $n_o = \frac{5000}{c}$.
 
-__Little-o is stronger than Big-O - that is, that when you have a function $\in o(something)$, it's also $\in O(something)$ as well.__
+__Little-o is stronger than Big-O - that is, that when you have a function $\in o(g(n))$, it's also $\in O(g(n))$ as well.__
 
 #### $\omega$-notation
 
-==__Formal Definition: __==$f(n) \in \omega(g(n))$ if for **all** constants $c \gt 0$, there exists a constant $n_o \gt 0$ such that $0 \leq c |g(n)| \lt |f(n)|$ for all $n \geq n_o$.
+==__Formal Definition: __==$f(n) \in \omega(g(n))​$ if for **all** constants $c \gt 0​$, there exists a constant $n_o \gt 0​$ such that $0 \leq c |g(n)| \lt |f(n)|​$ for all $n \geq n_o​$.
 
 - $g$ dominated by $f$
 - $f(n)$ grows faster than $g(n)$

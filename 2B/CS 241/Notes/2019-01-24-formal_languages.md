@@ -107,7 +107,11 @@ There are other classes that are increasingly hard to recognize automatically, i
 
 Formally, a dFA is a 5-tuple $M = (\Sigma, Q, q_0, A, \delta)$:
 
-- 
+- $\Sigma$ is a finite non-empty set representing the **alphabet.**
+- $Q$ is a finite non-empty set representing the **states.**
+- $q_0 \in Q$ is a **starting state**. 
+- $A \subseteq Q$ is a set of **accepting states.**
+- $\delta : (Q \times \Sigma) \rightarrow Q$ is the **[total] transition function** that tells us: given a state and a symbol of our alphabet, what state should we go do? 
 
 <svg width="400" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<ellipse stroke="black" stroke-width="1" fill="none" cx="153.5" cy="109.5" rx="30" ry="30"/>
@@ -126,12 +130,7 @@ Formally, a dFA is a 5-tuple $M = (\Sigma, Q, q_0, A, \delta)$:
 	<polygon stroke="black" stroke-width="1" points="93.5,109.5 123.5,109.5"/>
 	<polygon fill="black" stroke-width="1" points="123.5,109.5 115.5,104.5 115.5,114.5"/>
 </svg>
-
-DFA for $a^{2n}b, n \geq 0$^^^^^^^
-
 _Created with http://madebyevan.com/fsm/_
 
-FINIS THIS
-
-
+The above is a DFA for $a^{2n}b, n \geq 0$, where there are an even positive number of occurrences of $a$ followed by a single occurrence of $b$.
 

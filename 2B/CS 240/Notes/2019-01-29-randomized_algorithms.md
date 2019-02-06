@@ -31,7 +31,7 @@ The **average-case expected running time** is $\frac{1}{L} \sum\limits_R T(I, R)
 
 For the QuickSelect algorithm, we now change the pivot selection to be a _random_ index. The probability the random pivot has index $i$ is $\frac 1 n$, so the analysis is the same for the average case. The expected running time is again $\Theta(n)$.
 
-### QuickSort
+#QuickSort
 
 This is a sorting method based on partitioning.
 
@@ -48,7 +48,7 @@ quick-sort1(A):
 
 **Worst case:** $T^{(worst)}(n)$ = $T^{(worst)}(n - 1) + \Theta(n)$. Same as **quick-select1** with runtime of $\Theta(n^2)$.
 
-**Best case: $T^{(best)}(n) = T^{(best)}(\lfloor\frac{n-1} 2 \rfloor) + T^{(best)}(\lfloor\frac{n-1} 2 \rfloor) + \Theta(n)$**. Similar to **merge-sort** with runtime of $\Theta(n \log n)$.
+**Best case: $T^{(best)}(n) = T^{(best)}(\lfloor\frac{n-1} 2 \rfloor) + T^{(best)}(\lfloor\frac{n-1} 2 \rfloor) + \Theta(n)$**. Similar to **merge-sort** with runtime of $\Theta(n \log n)​$.
 
 #### Analyzing Best Case Runtime: Recursion Tree
 

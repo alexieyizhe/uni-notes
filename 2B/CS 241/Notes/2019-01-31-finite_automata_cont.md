@@ -1,6 +1,6 @@
 __CS 241 |__ January 31, 2019
 
-# t
+# More Finite Automata
 
 ### State Sets
 
@@ -76,6 +76,7 @@ The above would be the simpler NFA for the very first NFA we defined above.
 To **convert these $\epsilon$-NFAs to a DFA,** we ask similar questions as above, but we ask one additional one:
 
 - Where can I go on an input of $x$ while also following any $\epsilon$'s before or after $x$?
+- An **epsilon closure** is the set of states reachable from the current set of states (also an epsilon closure - default is the epsilon closure of the start state) through 0 (no epsilon, normal finite automata) or more epsilon transitions.
 
 We can implement an $\epsilon$-NFA like so:
 
@@ -99,7 +100,7 @@ $\epsilon$-NFAs exactly recognize regular language.
 | $a$         | ![image-20190131110047914](assets/image-20190131110047914.png) |      |
 | $E_1 | E_2$ | Connect a new start state to each start state of $E_1, E_2$ with an $\epsilon$ |      |
 | $E_1E_2$    | Connect all of the accept states of $E_1$ to the start state of $E_2$ with $\epsilon$, and change the accept states to regular states. |      |
-| $E^*$       | Create a new start state, make it accepting, connect it to the old one with an $\epsilon$, and connect accept states of $E$ to this new start state. |      |
+| $E^*$       | Create a new start state, make it accepting, connect it to the old one with an $\epsilon$, and connect accept states of $E$ to this new start state.<br />**We have to create a new state because the old start state may have other transitions back to it, and making it accepting could end up accepting unwanted strings.** |      |
 
 
 

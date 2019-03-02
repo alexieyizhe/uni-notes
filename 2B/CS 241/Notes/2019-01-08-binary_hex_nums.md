@@ -1,9 +1,5 @@
 __CS 241 |__ January 8, 2019
 
-
-
-RANDOM????????: Using the __Random Access Machine (RAM) model__, we create a simulated __MIPS__ machine.
-
 # Binary and Hexadecimal
 
 The **binary** system consists of $0$'s and $1$'s, known as **bits.** It's the only unit that a computer understands. It's convenient to group these bits together into sequences of 8 bits, also known as a **byte**, or 4 bits, also known as a **nibble.**

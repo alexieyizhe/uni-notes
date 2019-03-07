@@ -2,7 +2,7 @@ __CS 241 |__ January 8, 2019
 
 # Binary and Hexadecimal
 
-The **binary** system consists of $0$'s and $1$'s, known as **bits.** It's the only unit that a computer understands. It's convenient to group these bits together into sequences of 8 bits, also known as a **byte**, or 4 bits, also known as a **nibble.**
+The **binary** system consists of $0$'s and $1$'s, known as **bits.** It's the only unit that a computer understands. It's also convenient to group these bits together into sequences of 8 bits, also known as a **byte**, or 4 bits, also known as a **nibble.**
 
 - There are $2^8$ different patterns, or bytes.
 - A **word** is the machine-specific grouping of bits: most computers these days use 32-bit or 64-bit words.
@@ -49,10 +49,10 @@ Instead, computers use a system called **$2$s-complement**:
 
 #### An Alternate Method
 
-==+==: Interpret the 2s-complement number as normal magnitude
-`-`: Take the magnitude of the  2s-complement number. Flip the bits. Add 1 to get the decimal number.
+==+==: Convert the 2s-complement number as normal magnitude
+`-`: Take the magnitude of the  2s-complement number. Flip the bits. Add 1 and convert normally to get the decimal number.
 
-To convert back from a negative decimal number, you can do the same processs forwards (flip bits, add 1) since it's cyclic.
+To convert back from a negative decimal number, you can do the same processs forwards (interpret as positive, flip bits, add 1) since it's cyclic.
 
 > **Ex. -73 using alternate method.**
 > Forwards: $01001001 \rightarrow 10110110 \rightarrow 10110111$ 
@@ -77,6 +77,6 @@ The computer's only way of telling what a group of bits should be interpreted as
 
 ### Characters: ASCII
 
-Real ASCII is 7 bits, but we force it into 8 bits since its nicer, but this causes compatability issues.
+Real ASCII is 7 bits. We force it into 8 bits since its nicer, but this causes compatability issues.
 
-Unicode also used for global characters.
+Unicode is also used for global characters.

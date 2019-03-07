@@ -45,7 +45,7 @@ We will work with __MIPS__, an architecture that consists of the following:
       - `$0` is always 0s
       - `$31` is also special 
       - others might be special
-    - Each register operation will specify registers it operates on, and it takes 5 bits to represent a register number (5 digits in binary to represent a register number)
+    - Each register operation will specify registers it operates on, and it takes 5 bits to represent a register number (you need 5 digits in binary to represent a register number)
     - An **op code** determines which operation we are executing
 
   - **Memory Address Register (MAR)** stores a single desired word's memory address in RAM so that the Control Unit can reference it when fetching data from the RAM

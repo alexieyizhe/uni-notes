@@ -2,7 +2,7 @@ __CS 241 | __January 22, 2019
 
 # The Assembler
 
-Our goal is to convert assembly code (our MIPS language instructions) into machine code (binary ones and zeroes). The translation process between these two involves phases:
+Our goal is to convert assembly code (our MIPS language instructions) into machine code (binary 1'S and 2's). The translation process between these two involves phases:
 
 1. **Analysis:** Understand what is meant by the input source.
 2. **Synthesis:** Output the equivalent target code in the new format.
@@ -32,7 +32,7 @@ someLabel:
 
 In the example above, when we see `someLabel` on line 1, we don't know what the corresponding address is to convert this into machine code. 
 
-So, we need to make two passes:
+So, we need to make two passes when doing analysis:
 
 1. Group tokens into instructions. Record address of all labelled instructions, most likely in a dictionary, also known as a symbol table.
 2. Translate each instruction into machine code. If the instruction refers to a label, look up the associated address in the table created in Pass 1 and calculate the correct value.

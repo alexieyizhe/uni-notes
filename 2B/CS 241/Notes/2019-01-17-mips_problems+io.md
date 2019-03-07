@@ -46,7 +46,10 @@ f:
     lis $2         
     .word 8        ; decrement stack pointer to enforce invariant
     sub $30, $30, $2
-    ; CODE FOR PROCEDURE F
+    
+    ; HERE IS WHERE CODE FOR PROCEDURE F GOEZ
+    ; OK PROCEDURE F IS DONE NOW WE GO BAK BAK BAK
+    
     lis $2
     .word 8
     add $30, $30, $2
@@ -67,9 +70,11 @@ main:
 	lis $31              ; we just saved $31, so we can use it
 	.word 4
 	sub $30, $30, $31    ; decrement stack pointer to enforce invariant
+	
 	lis $8
 	.word f
 	jalr $8              ; call procedure f and set $31 to be this addr
+	
 	lis $31 
 	.word 4
 	add $30, $30, $31
@@ -83,7 +88,9 @@ f:
     lis $2         
     .word 8        ; decrement stack pointer to enforce invariant
     sub $30, $30, $2
-    ; CODE FOR PROCEDURE F
+    
+    ; SAME CODE FOR PROCEDURE F AS BEFORE
+    
     lis $2
     .word 8
     add $30, $30, $2

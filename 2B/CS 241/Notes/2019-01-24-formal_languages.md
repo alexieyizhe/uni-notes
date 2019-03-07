@@ -17,12 +17,12 @@ We want a _formal theory of string recognition_ to handle complexities in a prog
 
 - Symbols can be anything (_ex. dots and dashes, English words, etc_).
 
-==**String**== (also known as a **word**): A finite sequence of symbols from from an alphabet (_ex. $aaa, abc, ca, aca​$ _). 
+==**String**== (also known as a **word**): A finite sequence of symbols from from an alphabet (_ex. $aaa, abc, ca, aca$_). 
 
 - The **length** of a string $w$ is the number of symbols in $w$ and is denoted $|w|$.
-- The **empty string** is an empty sequence of symbols, denoted by $\epsilon​$ (epsilon is NOT a symbol in any alphabet) where $|\epsilon| = 0​$. 
+- The **empty string** is an empty sequence of symbols, denoted by $\epsilon$ (epsilon is NOT a symbol in any alphabet) where $|\epsilon| = 0$. 
 
-==**Language:**== A set of strings that are understood to be correctly interpreted (_ex. $\{a^{2n}b, n \geq 0\}$,_ but $\geq 0 \ n$ is not part of the math language).
+==**Language:**== A set of words that are understood to be correctly interpreted (_ex. $\{a^{2n}b, n \geq 0\}$ is a part of the math language,_ but $\geq 0 \ n$ is not).
 
 - An **empty set** is denoted $\empty$ or $\{\}$. It is NOT the empty string. It's possible to have a language which is $\{\epsilon \}$, a language of 1 string.
 

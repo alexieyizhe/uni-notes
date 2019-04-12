@@ -42,10 +42,3 @@ Unlike MIPS, we only need one pass as variables _must_ be declared before they a
 The previous solution to the declaration issue has to take into account scope as well. Two variables with the same name can be declared in different procedures with no problem, but one variable declared in a certain procedure cannot be used without declaration in a separate procedure.
 
 To resolve this, we need to create a top level symbol table that also associates the procedure name with the `TYPE ID` pair that is tracked previously. It also helps to have a global variable that tracks the current procedure we're in.
-
-
-
-### Inference Rules for Types
-
-![image-20190318232917089](assets/image-20190318232917089.png)
-

@@ -18,10 +18,7 @@
 - assembling assembly language into machine
   - Analysis & Synthesis
 - parts of a MIPS instruction
-- Bitwise operators
--  Formal languages
-  - Terms & definitions
-  - different language classes & hierarchy (based on difficulty to parse)
+- - 
 - DFAs & NFAs
   - Formal definitions
   - converting NFA to DFA
